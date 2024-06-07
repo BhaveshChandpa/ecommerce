@@ -9,8 +9,14 @@ class AdminController extends Controller
 {
     //
 
-    public function index(){
+    public function products(){
 
         return view('admin.index');
     }
+
+
+    // public function products(){
+
+    //     return view('admin.products');
+    // }
 }

@@ -19,4 +19,6 @@ Route::get('/', function () {
 });
 
 
-Route::get('index', [AdminController::class, 'index']);
+Route::get('products', [AdminController::class, 'products']);
+
+// Route::get('products', [AdminController::class, 'products']);
