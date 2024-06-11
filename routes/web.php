@@ -1,6 +1,7 @@
 <?php
 
-use App\Http\Controllers\Admin\AdminController;
+use App\Http\Controllers\Admin\CategoryController;
+use App\Http\Controllers\Admin\ProductController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -19,6 +20,9 @@ Route::get('/', function () {
 });
 
 
-Route::get('products', [AdminController::class, 'products']);
+Route::get('products', [ProductController::class, 'products']);
+
+
+Route::get('category', [CategoryController::class, 'index']);
 
 // Route::get('products', [AdminController::class, 'products']);
