@@ -1,52 +1,7 @@
-<!doctype html>
-<html lang="en">
+@extends('layouts.app')
 
-<!-- Head -->
-<head>
-    <!-- Page Meta Tags-->
-    <meta charset="utf-8">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <meta name="keywords" content="">
-
-    <!-- Favicon -->
-    <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('/assets/favicon/apple-touch-icon.png') }}">
-    <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('/assets/favicon/favicon-32x32.png') }}">
-    <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('/assets/favicon/favicon-16x16.png') }}">
-    <link rel="mask-icon" href="{{ asset('/assets/favicon/safari-pinned-tab.svg' )}}" color="#5bbad5">
-    <meta name="msapplication-TileColor" content="#da532c">
-    <meta name="theme-color" content="#ffffff">
-    
-    <!-- Vendor CSS -->
-    <link rel="stylesheet" href="{{ asset('assets/dist/assets/css/libs.bundle.css') }}" />
-
-    <!-- Main CSS -->
-    <link rel="stylesheet" href="{{ asset('assets/dist/assets/css/theme.bundle.css') }}" />
-
-    <!-- Google Fonts-->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
-    <!-- Fix for custom scrollbar if JS is disabled-->
-    <noscript>
-        <style>
-          /**
-          * Reinstate scrolling for non-JS clients
-          */
-          .simplebar-content-wrapper {
-            overflow: auto;
-          }
-        </style>
-    </noscript>
-
-    <!-- Page Title -->
-    <title>Alpine | Bootstrap 5 Ecommerce HTML Template</title>
-    
-</head>
-<body class="">
+@section('content')
+     
 
     <!-- Navbar -->
     <div class="position-relative z-index-30">
@@ -1151,7 +1106,7 @@
                                                 <div class="card position-relative h-100 card-listing hover-trigger">
                                                     <div class="card-header">
                                                         <picture class="position-relative overflow-hidden d-block bg-light">
-                                                            <img class="w-100 img-fluid position-relative z-index-10" title="" src="./assets/images/products/product-13.jpg" alt="Bootstrap 5 Template by Pixel Rocket">
+                                                            <img class="w-100 img-fluid position-relative z-index-10" title="" src="{{ asset('assets/src/assets/images/products/product-13.jpg')}}" alt="Bootstrap 5 Template by Pixel Rocket">
                                                         </picture>
                                                         <div class="card-actions">
                                                             <span class="small text-uppercase tracking-wide fw-bolder text-center d-block">Quick Add</span>
@@ -1194,7 +1149,7 @@
                                                 <div class="card position-relative h-100 card-listing hover-trigger">
                                                     <div class="card-header">
                                                         <picture class="position-relative overflow-hidden d-block bg-light">
-                                                            <img class="w-100 img-fluid position-relative z-index-10" title="" src="./assets/images/products/product-14.jpg" alt="Bootstrap 5 Template by Pixel Rocket">
+                                                            <img class="w-100 img-fluid position-relative z-index-10" title="" src="{{ asset('assets/src/assets/images/products/product-14.jpg')}}" alt="Bootstrap 5 Template by Pixel Rocket">
                                                         </picture>
                                                         <div class="card-actions">
                                                             <span class="small text-uppercase tracking-wide fw-bolder text-center d-block">Quick Add</span>
@@ -1237,7 +1192,7 @@
                                                 <div class="card position-relative h-100 card-listing hover-trigger">
                                                     <div class="card-header">
                                                         <picture class="position-relative overflow-hidden d-block bg-light">
-                                                            <img class="w-100 img-fluid position-relative z-index-10" title="" src="./assets/images/products/product-15.jpg" alt="Bootstrap 5 Template by Pixel Rocket">
+                                                            <img class="w-100 img-fluid position-relative z-index-10" title="" src="{{ asset('assets/src/assets/images/products/product-15.jpg')}}" alt="Bootstrap 5 Template by Pixel Rocket">
                                                         </picture>
                                                         <div class="card-actions">
                                                             <span class="small text-uppercase tracking-wide fw-bolder text-center d-block">Quick Add</span>
@@ -1280,7 +1235,7 @@
                                                 <div class="card position-relative h-100 card-listing hover-trigger">
                                                     <div class="card-header">
                                                         <picture class="position-relative overflow-hidden d-block bg-light">
-                                                            <img class="w-100 img-fluid position-relative z-index-10" title="" src="./assets/images/products/product-16.jpg" alt="Bootstrap 5 Template by Pixel Rocket">
+                                                            <img class="w-100 img-fluid position-relative z-index-10" title="" src="{{ asset('assets/src/assets/images/products/product-16.jpg')}}" alt="Bootstrap 5 Template by Pixel Rocket">
                                                         </picture>
                                                         <div class="card-actions">
                                                             <span class="small text-uppercase tracking-wide fw-bolder text-center d-block">Quick Add</span>
@@ -1330,7 +1285,7 @@
                                                 <div class="card position-relative h-100 card-listing hover-trigger">
                                                     <div class="card-header">
                                                         <picture class="position-relative overflow-hidden d-block bg-light">
-                                                            <img class="w-100 img-fluid position-relative z-index-10" title="" src="./assets/images/products/product-2.jpg" alt="Bootstrap 5 Template by Pixel Rocket">
+                                                            <img class="w-100 img-fluid position-relative z-index-10" title="" src="{{ asset('assets/src/assets/images/products/product-12.jpg')}}" alt="Bootstrap 5 Template by Pixel Rocket">
                                                         </picture>
                                                         <div class="card-actions">
                                                             <span class="small text-uppercase tracking-wide fw-bolder text-center d-block">Quick Add</span>
@@ -1373,7 +1328,7 @@
                                                 <div class="card position-relative h-100 card-listing hover-trigger">
                                                     <div class="card-header">
                                                         <picture class="position-relative overflow-hidden d-block bg-light">
-                                                            <img class="w-100 img-fluid position-relative z-index-10" title="" src="./assets/images/products/product-3.jpg" alt="Bootstrap 5 Template by Pixel Rocket">
+                                                            <img class="w-100 img-fluid position-relative z-index-10" title="" src="{{ asset('assets/src/assets/images/products/product-3.jpg')}}" alt="Bootstrap 5 Template by Pixel Rocket">
                                                         </picture>
                                                         <div class="card-actions">
                                                             <span class="small text-uppercase tracking-wide fw-bolder text-center d-block">Quick Add</span>
@@ -1416,7 +1371,7 @@
                                                 <div class="card position-relative h-100 card-listing hover-trigger">
                                                     <div class="card-header">
                                                         <picture class="position-relative overflow-hidden d-block bg-light">
-                                                            <img class="w-100 img-fluid position-relative z-index-10" title="" src="./assets/images/products/product-4.jpg" alt="Bootstrap 5 Template by Pixel Rocket">
+                                                            <img class="w-100 img-fluid position-relative z-index-10" title="" src="{{ asset('assets/src/assets/images/products/product-4.jpg')}}" alt="Bootstrap 5 Template by Pixel Rocket">
                                                         </picture>
                                                         <div class="card-actions">
                                                             <span class="small text-uppercase tracking-wide fw-bolder text-center d-block">Quick Add</span>
@@ -1459,7 +1414,7 @@
                                                 <div class="card position-relative h-100 card-listing hover-trigger">
                                                     <div class="card-header">
                                                         <picture class="position-relative overflow-hidden d-block bg-light">
-                                                            <img class="w-100 img-fluid position-relative z-index-10" title="" src="./assets/images/products/product-5.jpg" alt="Bootstrap 5 Template by Pixel Rocket">
+                                                            <img class="w-100 img-fluid position-relative z-index-10" title="" src="{{ asset('assets/src/assets/images/products/product-5.jpg')}}" alt="Bootstrap 5 Template by Pixel Rocket">
                                                         </picture>
                                                         <div class="card-actions">
                                                             <span class="small text-uppercase tracking-wide fw-bolder text-center d-block">Quick Add</span>
@@ -1509,7 +1464,7 @@
                                                 <div class="card position-relative h-100 card-listing hover-trigger">
                                                     <div class="card-header">
                                                         <picture class="position-relative overflow-hidden d-block bg-light">
-                                                            <img class="w-100 img-fluid position-relative z-index-10" title="" src="./assets/images/products/product-12.jpg" alt="Bootstrap 5 Template by Pixel Rocket">
+                                                            <img class="w-100 img-fluid position-relative z-index-10" title="" src="{{ asset('assets/src/assets/images/products/product-12.jpg')}}" alt="Bootstrap 5 Template by Pixel Rocket">
                                                         </picture>
                                                         <div class="card-actions">
                                                             <span class="small text-uppercase tracking-wide fw-bolder text-center d-block">Quick Add</span>
@@ -1552,7 +1507,7 @@
                                                 <div class="card position-relative h-100 card-listing hover-trigger">
                                                     <div class="card-header">
                                                         <picture class="position-relative overflow-hidden d-block bg-light">
-                                                            <img class="w-100 img-fluid position-relative z-index-10" title="" src="./assets/images/products/product-14.jpg" alt="Bootstrap 5 Template by Pixel Rocket">
+                                                            <img class="w-100 img-fluid position-relative z-index-10" title="" src="{{ asset('assets/src/assets/images/products/product-14.jpg')}}" alt="Bootstrap 5 Template by Pixel Rocket">
                                                         </picture>
                                                         <div class="card-actions">
                                                             <span class="small text-uppercase tracking-wide fw-bolder text-center d-block">Quick Add</span>
@@ -1595,7 +1550,7 @@
                                                 <div class="card position-relative h-100 card-listing hover-trigger">
                                                     <div class="card-header">
                                                         <picture class="position-relative overflow-hidden d-block bg-light">
-                                                            <img class="w-100 img-fluid position-relative z-index-10" title="" src="./assets/images/products/product-15.jpg" alt="Bootstrap 5 Template by Pixel Rocket">
+                                                            <img class="w-100 img-fluid position-relative z-index-10" title="" src="{{ asset('assets/src/assets/images/products/product-15.jpg')}}" alt="Bootstrap 5 Template by Pixel Rocket">
                                                         </picture>
                                                         <div class="card-actions">
                                                             <span class="small text-uppercase tracking-wide fw-bolder text-center d-block">Quick Add</span>
@@ -1638,7 +1593,7 @@
                                                 <div class="card position-relative h-100 card-listing hover-trigger">
                                                     <div class="card-header">
                                                         <picture class="position-relative overflow-hidden d-block bg-light">
-                                                            <img class="w-100 img-fluid position-relative z-index-10" title="" src="./assets/images/products/product-16.jpg" alt="Bootstrap 5 Template by Pixel Rocket">
+                                                            <img class="w-100 img-fluid position-relative z-index-10" title="" src="{{ asset('assets/src/assets/images/products/product-16.jpg')}}" alt="Bootstrap 5 Template by Pixel Rocket">
                                                         </picture>
                                                         <div class="card-actions">
                                                             <span class="small text-uppercase tracking-wide fw-bolder text-center d-block">Quick Add</span>
@@ -2095,7 +2050,7 @@
             <div class="row mx-0 pb-4 mb-4 border-bottom">
               <div class="col-3">
                 <picture class="d-block bg-light">
-                  <img class="img-fluid" src="./assets/images/products/product-1.jpg"
+                  <img class="img-fluid" src="{{ asset('assets/src//assets/images/products/product-1.jpg')}}"
                     alt="Bootstrap 5 Template by Pixel Rocket">
                 </picture>
               </div>
@@ -2116,7 +2071,7 @@
             <div class="row mx-0 pb-4 mb-4 border-bottom">
               <div class="col-3">
                 <picture class="d-block bg-light">
-                  <img class="img-fluid" src="./assets/images/products/product-2.jpg"
+                  <img class="img-fluid" src="{{ asset('assets/src//assets/images/products/product-2.jpg')}}"
                     alt="Bootstrap 5 Template by Pixel Rocket">
                 </picture>
               </div>
@@ -2565,6 +2520,5 @@
     
     <!-- Theme JS -->
     <script src="{{ asset('assets/dist/assets/js/theme.bundle.js')}}"></script>
-</body>
-
-</html>
+    
+@endsection
