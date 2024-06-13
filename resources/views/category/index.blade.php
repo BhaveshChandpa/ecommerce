@@ -12,7 +12,7 @@
             <div class="container-fluid d-flex justify-content-between align-items-center flex-wrap">
     
                 <!-- Logo-->
-                <a class="navbar-brand fw-bold fs-3 m-0 p-0 flex-shrink-0" href="./index.html">
+                <a class="navbar-brand fw-bold fs-3 m-0 p-0 flex-shrink-0" href="{{ route('home') }}">
                     <!-- Start of Logo-->
                     <div class="d-flex align-items-center">
                         <div class="f-w-6 d-flex align-items-center me-2 lh-1">
@@ -54,24 +54,24 @@
                                                 <div class="col col-lg-6 mb-5 mb-sm-0">
                                                     <h6 class="dropdown-heading">Waterproof Layers</h6>
                                                     <ul class="list-unstyled">
-                                                        <li class="dropdown-list-item"><a class="dropdown-item" href="{{ url('/category') }}">Waterproof
+                                                        <li class="dropdown-list-item"><a class="dropdown-item" href="{{ route('category.index') }}">Waterproof
                                                                 Jackets</a></li>
-                                                        <li class="dropdown-list-item"><a class="dropdown-item" href="{{ url('/category') }}">Insulated
+                                                        <li class="dropdown-list-item"><a class="dropdown-item" href="{{ route('category.index') }}">Insulated
                                                                 Jackets</a></li>
-                                                        <li class="dropdown-list-item"><a class="dropdown-item" href="{{ url('/category') }}">Down
+                                                        <li class="dropdown-list-item"><a class="dropdown-item" href="{{ route('category.index') }}">Down
                                                                 Jackets</a></li>
-                                                        <li class="dropdown-list-item"><a class="dropdown-item" href="{{ url('/category') }}">Softshell
+                                                        <li class="dropdown-list-item"><a class="dropdown-item" href="{{ route('category.index') }}">Softshell
                                                                 Jackets</a></li>
-                                                        <li class="dropdown-list-item"><a class="dropdown-item" href="{{ url('/category') }}">Casual
+                                                        <li class="dropdown-list-item"><a class="dropdown-item" href="{{ route('category.index') }}">Casual
                                                                 Jackets</a></li>
-                                                        <li class="dropdown-list-item"><a class="dropdown-item" href="{{ url('/category') }}">Windproof
+                                                        <li class="dropdown-list-item"><a class="dropdown-item" href="{{ route('category.index') }}">Windproof
                                                                 Jackets</a></li>
-                                                        <li class="dropdown-list-item"><a class="dropdown-item" href="{{ url('/category') }}">Breathable
+                                                        <li class="dropdown-list-item"><a class="dropdown-item" href="{{ route('category.index') }}">Breathable
                                                                 Jackets</a></li>
-                                                        <li class="dropdown-list-item"><a class="dropdown-item" href="{{ url('/category') }}">Cleaning &
+                                                        <li class="dropdown-list-item"><a class="dropdown-item" href="{{ route('category.index') }}">Cleaning &
                                                                 Proofing</a></li>
                                                         <li class="dropdown-list-item"><a class="dropdown-item dropdown-link-all"
-                                                                href="./category.html">View All</a></li>
+                                                                href="{{ route('category.index') }}">View All</a></li>
                                                     </ul>
                                             
                                                 </div>
@@ -81,24 +81,24 @@
                                                 <div class="col col-lg-6">
                                                     <h6 class="dropdown-heading">Brands</h6>
                                                     <ul class="list-unstyled">
-                                                        <li class="dropdown-list-item"><a class="dropdown-item" href="{{ url('/category') }}">Lifestyle &
+                                                        <li class="dropdown-list-item"><a class="dropdown-item" href="{{ route('category.index') }}">Lifestyle &
                                                                 Casual</a></li>
-                                                        <li class="dropdown-list-item"><a class="dropdown-item" href="{{ url('/category') }}">Walking
+                                                        <li class="dropdown-list-item"><a class="dropdown-item" href="{{ route('category.index') }}">Walking
                                                                 Shoes</a></li>
-                                                        <li class="dropdown-list-item"><a class="dropdown-item" href="{{ url('/category') }}">Running
+                                                        <li class="dropdown-list-item"><a class="dropdown-item" href="{{ route('category.index') }}">Running
                                                                 Shoes</a></li>
-                                                        <li class="dropdown-list-item"><a class="dropdown-item" href="{{ url('/category') }}">Military
+                                                        <li class="dropdown-list-item"><a class="dropdown-item" href="{{ route('category.index') }}">Military
                                                                 Boots</a></li>
-                                                        <li class="dropdown-list-item"><a class="dropdown-item" href="{{ url('/category') }}">Fabric Walking
+                                                        <li class="dropdown-list-item"><a class="dropdown-item" href="{{ route('category.index') }}">Fabric Walking
                                                                 Boots</a></li>
-                                                        <li class="dropdown-list-item"><a class="dropdown-item" href="{{ url('/category') }}">Leather
+                                                        <li class="dropdown-list-item"><a class="dropdown-item" href="{{ route('category.index') }}">Leather
                                                                 Walking Boots</a></li>
-                                                        <li class="dropdown-list-item"><a class="dropdown-item" href="{{ url('/category') }}">Wellies</a>
+                                                        <li class="dropdown-list-item"><a class="dropdown-item" href="{{ route('category.index') }}">Wellies</a>
                                                         </li>
-                                                        <li class="dropdown-list-item"><a class="dropdown-item" href="{{ url('/category') }}">Winter
+                                                        <li class="dropdown-list-item"><a class="dropdown-item" href="{{ route('category.index') }}">Winter
                                                                 Footwear</a></li>
                                                         <li class="dropdown-list-item"><a class="dropdown-item dropdown-link-all"
-                                                                href="./category.html">View All</a></li>
+                                                                href="{{ route('category.index') }}">View All</a></li>
                                                     </ul>
                                                 </div>
                                                 <!-- /menu row-->
@@ -133,24 +133,24 @@
                                                 <div class="col col-lg-6 mb-5 mb-sm-0">
                                                     <h6 class="dropdown-heading">Waterproof Layers</h6>
                                                     <ul class="list-unstyled">
-                                                        <li class="dropdown-list-item"><a class="dropdown-item" href="./category.html">Waterproof
+                                                        <li class="dropdown-list-item"><a class="dropdown-item" href="{{ route('category.index') }}">Waterproof
                                                                 Jackets</a></li>
-                                                        <li class="dropdown-list-item"><a class="dropdown-item" href="./category.html">Insulated
+                                                        <li class="dropdown-list-item"><a class="dropdown-item" href="{{ route('category.index') }}">Insulated
                                                                 Jackets</a></li>
-                                                        <li class="dropdown-list-item"><a class="dropdown-item" href="./category.html">Down
+                                                        <li class="dropdown-list-item"><a class="dropdown-item" href="{{ route('category.index') }}">Down
                                                                 Jackets</a></li>
-                                                        <li class="dropdown-list-item"><a class="dropdown-item" href="./category.html">Softshell
+                                                        <li class="dropdown-list-item"><a class="dropdown-item" href="{{ route('category.index') }}">Softshell
                                                                 Jackets</a></li>
-                                                        <li class="dropdown-list-item"><a class="dropdown-item" href="./category.html">Casual
+                                                        <li class="dropdown-list-item"><a class="dropdown-item" href="{{ route('category.index') }}">Casual
                                                                 Jackets</a></li>
-                                                        <li class="dropdown-list-item"><a class="dropdown-item" href="./category.html">Windproof
+                                                        <li class="dropdown-list-item"><a class="dropdown-item" href="{{ route('category.index') }}">Windproof
                                                                 Jackets</a></li>
-                                                        <li class="dropdown-list-item"><a class="dropdown-item" href="./category.html">Breathable
+                                                        <li class="dropdown-list-item"><a class="dropdown-item" href="{{ route('category.index') }}">Breathable
                                                                 Jackets</a></li>
-                                                        <li class="dropdown-list-item"><a class="dropdown-item" href="./category.html">Cleaning &
+                                                        <li class="dropdown-list-item"><a class="dropdown-item" href="{{ route('category.index') }}">Cleaning &
                                                                 Proofing</a></li>
                                                         <li class="dropdown-list-item"><a class="dropdown-item dropdown-link-all"
-                                                                href="./category.html">View All</a></li>
+                                                                href="{{ route('category.index') }}">View All</a></li>
                                                     </ul>
                                             
                                                 </div>
@@ -160,24 +160,24 @@
                                                 <div class="col col-lg-6">
                                                     <h6 class="dropdown-heading">Brands</h6>
                                                     <ul class="list-unstyled">
-                                                        <li class="dropdown-list-item"><a class="dropdown-item" href="./category.html">Lifestyle &
+                                                        <li class="dropdown-list-item"><a class="dropdown-item" href="{{ route('category.index') }}">Lifestyle &
                                                                 Casual</a></li>
-                                                        <li class="dropdown-list-item"><a class="dropdown-item" href="./category.html">Walking
+                                                        <li class="dropdown-list-item"><a class="dropdown-item" href="{{ route('category.index') }}">Walking
                                                                 Shoes</a></li>
-                                                        <li class="dropdown-list-item"><a class="dropdown-item" href="./category.html">Running
+                                                        <li class="dropdown-list-item"><a class="dropdown-item" href="{{ route('category.index') }}">Running
                                                                 Shoes</a></li>
-                                                        <li class="dropdown-list-item"><a class="dropdown-item" href="./category.html">Military
+                                                        <li class="dropdown-list-item"><a class="dropdown-item" href="{{ route('category.index') }}">Military
                                                                 Boots</a></li>
-                                                        <li class="dropdown-list-item"><a class="dropdown-item" href="./category.html">Fabric Walking
+                                                        <li class="dropdown-list-item"><a class="dropdown-item" href="{{ route('category.index') }}">Fabric Walking
                                                                 Boots</a></li>
-                                                        <li class="dropdown-list-item"><a class="dropdown-item" href="./category.html">Leather
+                                                        <li class="dropdown-list-item"><a class="dropdown-item" href="{{ route('category.index') }}">Leather
                                                                 Walking Boots</a></li>
-                                                        <li class="dropdown-list-item"><a class="dropdown-item" href="./category.html">Wellies</a>
+                                                        <li class="dropdown-list-item"><a class="dropdown-item" href="{{ route('category.index') }}">Wellies</a>
                                                         </li>
-                                                        <li class="dropdown-list-item"><a class="dropdown-item" href="./category.html">Winter
+                                                        <li class="dropdown-list-item"><a class="dropdown-item" href="{{ route('category.index') }}">Winter
                                                                 Footwear</a></li>
                                                         <li class="dropdown-list-item"><a class="dropdown-item dropdown-link-all"
-                                                                href="./category.html">View All</a></li>
+                                                                href="{{ route('category.index') }}">View All</a></li>
                                                     </ul>
                                                 </div>
                                                 <!-- /menu row-->
@@ -211,9 +211,9 @@
                                 Demo Pages
                             </a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="./index.html">Homepage</a></li>
-                                <li><a class="dropdown-item" href="./category.html">Category</a></li>
-                                <li><a class="dropdown-item" href="./product.html">Product</a></li>
+                                <li><a class="dropdown-item" href="{{ route('home') }}">Homepage</a></li>
+                                <li><a class="dropdown-item" href="{{ route('category.index') }}">Category</a></li>
+                                <li><a class="dropdown-item" href="{{ route('product.index') }}">Product</a></li>
                                 <li><a class="dropdown-item" href="./cart.html">Cart</a></li>
                                 <li><a class="dropdown-item" href="./checkout.html">Checkout</a></li>
                               </ul>
@@ -651,7 +651,7 @@
                                     </div> <span class="small fw-bolder ms-2 text-muted"> 4.7 (456)</span>
                                             </div>
                                             <a class="mb-0 mx-2 mx-md-4 fs-p link-cover text-decoration-none d-block text-center"
-                                                href="./product.html">Full Zip Hoodie</a>
+                                                href="{{ route('product.index') }}">Full Zip Hoodie</a>
                                                 <p class="fw-bolder m-0 mt-2">$1129.99</p>
                                         </div>
                                     </div>
@@ -695,7 +695,7 @@
                                     </div> <span class="small fw-bolder ms-2 text-muted"> 4.4 (1289)</span>
                                             </div>
                                             <a class="mb-0 mx-2 mx-md-4 fs-p link-cover text-decoration-none d-block text-center"
-                                                href="./product.html">Mens Sherpa Hoodie</a>
+                                                href="{{ route('product.index') }}">Mens Sherpa Hoodie</a>
                                                 <div class="d-flex justify-content-center align-items-center mt-2">
                                                     <p class="mb-0 me-2 text-danger fw-bolder">$<span>599.55</span></p>
                                                     <p class="mb-0 text-muted fw-bolder"><s>$<span>150.00</span></s></p>
@@ -742,7 +742,7 @@
                                     </div> <span class="small fw-bolder ms-2 text-muted"> 4.7 (754)</span>
                                             </div>
                                             <a class="mb-0 mx-2 mx-md-4 fs-p link-cover text-decoration-none d-block text-center"
-                                                href="./product.html">Womens Essentials Hoodie</a>
+                                                href="{{ route('product.index') }}">Womens Essentials Hoodie</a>
                                                 <div class="d-flex justify-content-center align-items-center mt-2">
                                                     <p class="mb-0 me-2 text-danger fw-bolder">$<span>779.55</span></p>
                                                     <p class="mb-0 text-muted fw-bolder"><s>$<span>1100.00</span></s></p>
@@ -788,7 +788,7 @@
                                     </div> <span class="small fw-bolder ms-2 text-muted"> 4.4 (1289)</span>
                                             </div>
                                             <a class="mb-0 mx-2 mx-md-4 fs-p link-cover text-decoration-none d-block text-center"
-                                                href="./product.html">Elevated Lined Hoodie</a>
+                                                href="{{ route('product.index') }}">Elevated Lined Hoodie</a>
                                                 <p class="fw-bolder m-0 mt-2">$1829.99</p>
                                         </div>
                                     </div>
@@ -850,7 +850,7 @@
                                     </div> <span class="small fw-bolder ms-2 text-muted"> 4.7 (456)</span>
                                             </div>
                                             <a class="mb-0 mx-2 mx-md-4 fs-p link-cover text-decoration-none d-block text-center"
-                                                href="./product.html">Full Zip Hoodie</a>
+                                                href="{{ route('product.index') }}">Full Zip Hoodie</a>
                                                 <p class="fw-bolder m-0 mt-2">$1129.99</p>
                                         </div>
                                     </div>
@@ -894,7 +894,7 @@
                                     </div> <span class="small fw-bolder ms-2 text-muted"> 4.4 (1289)</span>
                                             </div>
                                             <a class="mb-0 mx-2 mx-md-4 fs-p link-cover text-decoration-none d-block text-center"
-                                                href="./product.html">Mens Sherpa Hoodie</a>
+                                                href="{{ route('product.index') }}">Mens Sherpa Hoodie</a>
                                                 <div class="d-flex justify-content-center align-items-center mt-2">
                                                     <p class="mb-0 me-2 text-danger fw-bolder">$<span>599.55</span></p>
                                                     <p class="mb-0 text-muted fw-bolder"><s>$<span>150.00</span></s></p>
@@ -941,7 +941,7 @@
                                     </div> <span class="small fw-bolder ms-2 text-muted"> 4.7 (754)</span>
                                             </div>
                                             <a class="mb-0 mx-2 mx-md-4 fs-p link-cover text-decoration-none d-block text-center"
-                                                href="./product.html">Womens Essentials Hoodie</a>
+                                                href="{{ route('product.index') }}">Womens Essentials Hoodie</a>
                                                 <div class="d-flex justify-content-center align-items-center mt-2">
                                                     <p class="mb-0 me-2 text-danger fw-bolder">$<span>779.55</span></p>
                                                     <p class="mb-0 text-muted fw-bolder"><s>$<span>1100.00</span></s></p>
@@ -987,7 +987,7 @@
                                     </div> <span class="small fw-bolder ms-2 text-muted"> 4.4 (1289)</span>
                                             </div>
                                             <a class="mb-0 mx-2 mx-md-4 fs-p link-cover text-decoration-none d-block text-center"
-                                                href="./product.html">Elevated Lined Hoodie</a>
+                                                href="{{ route('product.index') }}">Elevated Lined Hoodie</a>
                                                 <p class="fw-bolder m-0 mt-2">$1829.99</p>
                                         </div>
                                     </div>
@@ -1033,7 +1033,7 @@
                                     </div> <span class="small fw-bolder ms-2 text-muted"> 4.8 (189)</span>
                                             </div>
                                             <a class="mb-0 mx-2 mx-md-4 fs-p link-cover text-decoration-none d-block text-center"
-                                                href="./product.html">Mens Slab Hoodie</a>
+                                                href="{{ route('product.index') }}">Mens Slab Hoodie</a>
                                                 <p class="fw-bolder m-0 mt-2">$29.99</p>
                                         </div>
                                     </div>
@@ -1076,7 +1076,7 @@
                                     </div> <span class="small fw-bolder ms-2 text-muted"> 4.5 (1567)</span>
                                             </div>
                                             <a class="mb-0 mx-2 mx-md-4 fs-p link-cover text-decoration-none d-block text-center"
-                                                href="./product.html">Blocked Striped Hoodie</a>
+                                                href="{{ route('product.index') }}">Blocked Striped Hoodie</a>
                                                 <p class="fw-bolder m-0 mt-2">$1329.99</p>
                                         </div>
                                     </div>
@@ -1166,49 +1166,49 @@
             <div class="row g-2">
                 <div class="d-none d-md-block col-md-4" data-aos="fade-in" data-aos-delay="150">
                     <picture>
-                        <img class="img-fluid" src="./assets/images/instagram/instagram-1.jpg" alt="Bootstrap 5 Template by Pixel Rocket" data-zoomable>
+                        <img class="img-fluid" src="{{ asset('assets/src/assets/images/instagram/instagram-1.jpg') }}" alt="Bootstrap 5 Template by Pixel Rocket" data-zoomable>
                     </picture>
                 </div>
                 <div class="col-12 col-md-8" data-aos="fade-in" data-aos-delay="300">
                     <div class="row g-2">
                         <div class="col-3">
                             <picture>
-                                <img class="img-fluid" src="./assets/images/instagram/instagram-2.jpg" alt="Bootstrap 5 Template by Pixel Rocket" data-zoomable>
+                                <img class="img-fluid" src="{{ asset('assets/src/assets/images/instagram/instagram-2.jpg') }}" alt="Bootstrap 5 Template by Pixel Rocket" data-zoomable>
                             </picture>
                         </div>
                         <div class="col-3">
                             <picture>
-                                <img class="img-fluid" src="./assets/images/instagram/instagram-3.jpg" alt="Bootstrap 5 Template by Pixel Rocket" data-zoomable>
+                                <img class="img-fluid" src="{{ asset('assets/src/assets/images/instagram/instagram-3.jpg') }}" alt="Bootstrap 5 Template by Pixel Rocket" data-zoomable>
                             </picture>
                         </div>
                         <div class="col-3">
                             <picture>
-                                <img class="img-fluid" src="./assets/images/instagram/instagram-4.jpg" alt="Bootstrap 5 Template by Pixel Rocket" data-zoomable>
+                                <img class="img-fluid" src="{{ asset('assets/src/assets/images/instagram/instagram-4.jpg') }}" alt="Bootstrap 5 Template by Pixel Rocket" data-zoomable>
                             </picture>
                         </div>
                         <div class="col-3">
                             <picture>
-                                <img class="img-fluid" src="./assets/images/instagram/instagram-5.jpg" alt="Bootstrap 5 Template by Pixel Rocket" data-zoomable>
+                                <img class="img-fluid" src="{{ asset('assets/src/assets/images/instagram/instagram-5.jpg') }}" alt="Bootstrap 5 Template by Pixel Rocket" data-zoomable>
                             </picture>
                         </div>
                         <div class="col-3">
                             <picture>
-                                <img class="img-fluid" src="./assets/images/instagram/instagram-6.jpg" alt="Bootstrap 5 Template by Pixel Rocket" data-zoomable>
+                                <img class="img-fluid" src="{{ asset('assets/src/assets/images/instagram/instagram-6.jpg') }}" alt="Bootstrap 5 Template by Pixel Rocket" data-zoomable>
                             </picture>
                         </div>
                         <div class="col-3">
                             <picture>
-                                <img class="img-fluid" src="./assets/images/instagram/instagram-7.jpg" alt="Bootstrap 5 Template by Pixel Rocket" data-zoomable>
+                                <img class="img-fluid" src="{{ asset('assets/src/assets/images/instagram/instagram-7.jpg') }}" alt="Bootstrap 5 Template by Pixel Rocket" data-zoomable>
                             </picture>
                         </div>
                         <div class="col-3">
                             <picture>
-                                <img class="img-fluid" src="./assets/images/instagram/instagram-8.jpg" alt="Bootstrap 5 Template by Pixel Rocket" data-zoomable>
+                                <img class="img-fluid" src="{{ asset('assets/src/assets/images/instagram/instagram-8.jpg') }}" alt="Bootstrap 5 Template by Pixel Rocket" data-zoomable>
                             </picture>
                         </div>
                         <div class="col-3">
                             <picture>
-                                <img class="img-fluid" src="./assets/images/instagram/instagram-9.jpg" alt="Bootstrap 5 Template by Pixel Rocket" data-zoomable>
+                                <img class="img-fluid" src="{{ asset('assets/src/assets/images/instagram/instagram-9.jpg') }}" alt="Bootstrap 5 Template by Pixel Rocket" data-zoomable>
                             </picture>
                         </div>
                     </div>
@@ -1275,13 +1275,13 @@
                         <h6 class="mb-4 fw-bolder fs-6">Shop</h6>
                         <ul class="list-unstyled">
                             <li class="mb-2"><a class="text-decoration-none text-white opacity-75 opacity-25-hover transition-all"
-                                    href="./category.html">Menswear</a></li>
+                                    href="{{ route('category.index') }}">Menswear</a></li>
                             <li class="mb-2"><a class="text-decoration-none text-white opacity-75 opacity-25-hover transition-all"
-                                    href="./category.html">Womenswear</a></li>
+                                    href="{{ route('category.index') }}">Womenswear</a></li>
                             <li class="mb-2"><a class="text-decoration-none text-white opacity-75 opacity-25-hover transition-all"
-                                    href="./category.html">Kidswear</a></li>
+                                    href="{{ route('category.index') }}">Kidswear</a></li>
                             <li class="mb-2"><a class="text-decoration-none text-white opacity-75 opacity-25-hover transition-all"
-                                    href="./category.html">New Arrivals</a></li>
+                                    href="{{ route('category.index') }}">New Arrivals</a></li>
                         </ul>
                     </nav>
                     <!-- /Footer Nav-->
@@ -1381,7 +1381,7 @@
             <div class="row mx-0 pb-4 mb-4 border-bottom">
               <div class="col-3">
                 <picture class="d-block bg-light">
-                  <img class="img-fluid" src="./assets/images/products/product-1.jpg"
+                  <img class="img-fluid" src="{{ asset('assets/src/assets/images/products/product-1.jpg') }}"
                     alt="Bootstrap 5 Template by Pixel Rocket">
                 </picture>
               </div>
@@ -1402,7 +1402,7 @@
             <div class="row mx-0 pb-4 mb-4 border-bottom">
               <div class="col-3">
                 <picture class="d-block bg-light">
-                  <img class="img-fluid" src="./assets/images/products/product-2.jpg"
+                  <img class="img-fluid" src="{{ asset('assets/src/assets/images/products/product-2.jpg') }}"
                     alt="Bootstrap 5 Template by Pixel Rocket">
                 </picture>
               </div>
@@ -1787,7 +1787,7 @@
                             </div> <span class="small fw-bolder ms-2 text-muted"> 4.2 (123)</span>
                                     </div>
                                     <a class="mb-0 mx-2 mx-md-4 fs-p link-cover text-decoration-none d-block text-center"
-                                        href="./product.html">Mens Pennie II Waterproof Jacket</a>
+                                        href="">Mens Pennie II Waterproof Jacket</a>
                                         <p class="fw-bolder m-0 mt-2">$325.66</p>
                                 </div>
                             </div>
@@ -1830,7 +1830,7 @@
                             </div> <span class="small fw-bolder ms-2 text-muted"> 4.5 (1289)</span>
                                     </div>
                                     <a class="mb-0 mx-2 mx-md-4 fs-p link-cover text-decoration-none d-block text-center"
-                                        href="./product.html">Mens Storm Waterproof Jacket</a>
+                                        href="{{ route('product.index') }}">Mens Storm Waterproof Jacket</a>
                                         <p class="fw-bolder m-0 mt-2">$499.99</p>
                                 </div>
                             </div>
@@ -1845,11 +1845,10 @@
             </div>
         </div>
     </section>
-    <!-- Theme JS -->
+  
+ <!-- Theme JS -->
     <!-- Vendor JS -->
-    <script src="{{ asset('assets/dist/assets/js/vendor.bundle.js')}}"></script>
-    
-    <!-- Theme JS -->
-    <script src="{{ asset('assets/dist/assets/js/theme.bundle.js')}}"></script>
+
+    @include('layouts.script')
     
 @endsection

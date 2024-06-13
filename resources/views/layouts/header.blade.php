@@ -1,3 +1,6 @@
+<head>
+ 
+ 
  <!-- Page Meta Tags-->
  <meta charset="utf-8">
  <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -39,3 +42,6 @@
 
  <!-- Page Title -->
  <title>Alpine | Bootstrap 5 Ecommerce HTML Template</title>
+
+
+</head>

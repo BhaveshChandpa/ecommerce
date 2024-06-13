@@ -20,9 +20,12 @@ Route::get('/', function () {
 });
 
 
-Route::get('products', [ProductController::class, 'products']);
+Route::get('home', [ProductController::class, 'home'])->name('home');
+
+Route::get('/product', [ProductController::class, 'product'])->name('product.index');
+
+Route::get('category', [CategoryController::class, 'index'])->name('category.index');
 
 
-Route::get('category', [CategoryController::class, 'index']);
 
 // Route::get('products', [AdminController::class, 'products']);
