@@ -284,6 +284,8 @@
         <!-- / Navbar-->    </div>
     <!-- / Navbar-->
 
+    @foreach ($category as $category)
+        
     <!-- Main Section-->
     <section class="mt-0 ">
         <!-- Page Content Goes Here -->
@@ -464,6 +466,8 @@
                             <div class="card-body px-0 text-center">
                                 <div class="d-flex justify-content-center align-items-center mx-auto mb-1">
                                     <!-- Review Stars Small-->
+
+                                        
                         <div class="rating position-relative d-table">
                             <div class="position-absolute stars" style="width: 90%">
                                 <i class="ri-star-fill text-dark mr-1"></i>
@@ -482,10 +486,11 @@
                         </div> <span class="small fw-bolder ms-2 text-muted"> 4.7 (456)</span>
                                 </div>
                                 <a class="mb-0 mx-2 mx-md-4 fs-p link-cover text-decoration-none d-block text-center"
-                                    href="{{ route('product.index') }}">Full Zip Hoodie</a>
+                                    href="{{ route('product.index') }}">{{ $category->id }}</a>
                                     <p class="fw-bolder m-0 mt-2">$1129.99</p>
                             </div>
                         </div>
+
                         <!--/ Card Product-->
                       </div>
                       <div class="swiper-slide d-flex h-auto">
@@ -526,7 +531,7 @@
                         </div> <span class="small fw-bolder ms-2 text-muted"> 4.4 (1289)</span>
                                 </div>
                                 <a class="mb-0 mx-2 mx-md-4 fs-p link-cover text-decoration-none d-block text-center"
-                                    href="{{ route('product.index') }}">Mens Sherpa Hoodie</a>
+                                    href="{{ route('product.index') }}">{{ $category->id }}</a>
                                     <div class="d-flex justify-content-center align-items-center mt-2">
                                         <p class="mb-0 me-2 text-danger fw-bolder">$<span>599.55</span></p>
                                         <p class="mb-0 text-muted fw-bolder"><s>$<span>150.00</span></s></p>
@@ -1800,6 +1805,9 @@
 
         <!-- /Page Content -->
     </section>
+
+    @endforeach
+
     <!-- / Main Section-->
 
     <!-- Footer -->
