@@ -9,9 +9,7 @@ class ProductController extends Controller
 {
     //
 
-    public function home(){
-        return view('home.index');
-    }
+   
 
     public function product(){
 

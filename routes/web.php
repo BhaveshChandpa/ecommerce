@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\CategoryController;
+use App\Http\Controllers\Admin\HomeController;
 use App\Http\Controllers\Admin\ProductController;
 use Illuminate\Support\Facades\Route;
 
@@ -20,11 +21,11 @@ Route::get('/', function () {
 });
 
 
-Route::get('home', [ProductController::class, 'home'])->name('home');
+Route::get('/home', [HomeController::class, 'home'])->name('home');
 
 Route::get('/product', [ProductController::class, 'product'])->name('product.index');
 
-Route::get('category', [CategoryController::class, 'index'])->name('category.index');
+Route::get('/category', [CategoryController::class, 'index'])->name('category.index');
 
 
 
