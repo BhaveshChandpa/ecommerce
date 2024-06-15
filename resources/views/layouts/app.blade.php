@@ -6,7 +6,7 @@
     @include('layouts.header')
 
 
-<body>
+<body class="">
 
    
 
@@ -14,6 +14,7 @@
 
     
 </body>
+
 
 
 
