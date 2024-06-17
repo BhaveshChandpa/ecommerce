@@ -13,23 +13,19 @@ class HomeController extends Controller
     public function home(){
 
         $cachekey = 'categories.all';
-        $cacheDuration = 60;
+        $cacheDuration = 0;
 
-        // $categories = Category::whereNull('parent_id')
-        //             ->with('children')
-        //             ->select('id', 'parent_id', 'name')
-        //             ->get();
 
         $categories = Cache::remember($cachekey, $cacheDuration, function(){
             
             return Category::whereNull('parent_id')
-                        ->with('children')
+                        ->withWhereHas('subcategories')
                         ->select('id', 'parent_id', 'name')
                         ->get();
         });
 
-        return view('home.index', compact('categories'));
-
+        
+        return view('home.index', ['categories'=>$categories]);
         
     }
 
