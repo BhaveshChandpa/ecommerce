@@ -29,12 +29,14 @@
                         <i class="ri-close-circle-line ri-2x"></i>
                     </button>
                     <!-- / Mobile Nav Toggler-->
-    
+           
                     <ul class="navbar-nav py-lg-2 mx-auto">
+                    @foreach($categories as $category)
+
                         <li class="nav-item me-lg-4 dropdown position-static">
                             <a class="nav-link fw-bolder dropdown-toggle py-lg-4" href="#" role="button" data-bs-toggle="dropdown"
                                 aria-haspopup="true" aria-expanded="false">
-                                Menswear
+                            {{$category->name}}
                             </a>
                             <!-- Menswear dropdown menu-->
                             <div class="dropdown-menu dropdown-megamenu">
@@ -46,55 +48,13 @@
                                             
                                                 <!-- menu row-->
                                                 <div class="col col-lg-6 mb-5 mb-sm-0">
-                                                    <h6 class="dropdown-heading">Waterproof Layers</h6>
                                                     <ul class="list-unstyled">
-                                                        <li class="dropdown-list-item"><a class="dropdown-item" href="{{ route('category.index') }}">Waterproof
-                                                                Jackets</a></li>
-                                                        <li class="dropdown-list-item"><a class="dropdown-item" href="{{ route('category.index') }}">Insulated
-                                                                Jackets</a></li>
-                                                        <li class="dropdown-list-item"><a class="dropdown-item" href="{{ route('category.index') }}">Down
-                                                                Jackets</a></li>
-                                                        <li class="dropdown-list-item"><a class="dropdown-item" href="{{ route('category.index') }}">Softshell
-                                                                Jackets</a></li>
-                                                        <li class="dropdown-list-item"><a class="dropdown-item" href="{{ route('category.index') }}">Casual
-                                                                Jackets</a></li>
-                                                        <li class="dropdown-list-item"><a class="dropdown-item" href="{{ route('category.index') }}">Windproof
-                                                                Jackets</a></li>
-                                                        <li class="dropdown-list-item"><a class="dropdown-item" href="{{ route('category.index') }}">Breathable
-                                                                Jackets</a></li>
-                                                        <li class="dropdown-list-item"><a class="dropdown-item" href="{{ route('category.index') }}">Cleaning &
-                                                                Proofing</a></li>
-                                                        <li class="dropdown-list-item"><a class="dropdown-item dropdown-link-all"
-                                                                href="{{ route('category.index') }}">View All</a></li>
+                                                        @foreach($category->subcategories as $subcategory)
+                                                        <li class="dropdown-list-item"><a class="dropdown-item" href="{{ route('category.index') }}">
+                                                                {{$subcategory->name}}</a></li>
+                                                        @endforeach
                                                     </ul>
-                                            
-                                                </div>
-                                                <!-- /menu row-->
-                                            
-                                                <!-- menu row-->
-                                                <div class="col col-lg-6">
-                                                    <h6 class="dropdown-heading">Brands</h6>
-                                                    <ul class="list-unstyled">
-                                                        <li class="dropdown-list-item"><a class="dropdown-item" href="{{ route('category.index') }}">Lifestyle &
-                                                                Casual</a></li>
-                                                        <li class="dropdown-list-item"><a class="dropdown-item" href="{{ route('category.index') }}">Walking
-                                                                Shoes</a></li>
-                                                        <li class="dropdown-list-item"><a class="dropdown-item" href="{{ route('category.index') }}">Running
-                                                                Shoes</a></li>
-                                                        <li class="dropdown-list-item"><a class="dropdown-item" href="{{ route('category.index') }}">Military
-                                                                Boots</a></li>
-                                                        <li class="dropdown-list-item"><a class="dropdown-item" href="{{ route('category.index') }}">Fabric Walking
-                                                                Boots</a></li>
-                                                        <li class="dropdown-list-item"><a class="dropdown-item" href="{{ route('category.index') }}">Leather
-                                                                Walking Boots</a></li>
-                                                        <li class="dropdown-list-item"><a class="dropdown-item" href="{{ route('category.index') }}">Wellies</a>
-                                                        </li>
-                                                        <li class="dropdown-list-item"><a class="dropdown-item" href="{{ route('category.index') }}">Winter
-                                                                Footwear</a></li>
-                                                        <li class="dropdown-list-item"><a class="dropdown-item dropdown-link-all"
-                                                                href="{{ route('category.index') }}">View All</a></li>
-                                                    </ul>
-                                                </div>
+                                                     
                                                 <!-- /menu row-->
                                             
                                             </div>                    </div>
@@ -110,108 +70,8 @@
                             </div>
                             <!-- / Menswear dropdown menu-->
                         </li>
-                        <li class="nav-item me-lg-4 dropdown position-static">
-                            <a class="nav-link fw-bolder dropdown-toggle py-lg-4" href="#" role="button" data-bs-toggle="dropdown"
-                                aria-haspopup="true" aria-expanded="false">
-                                Womenswear
-                            </a>
-                            <!-- Womenswear dropdown menu-->
-                            <div class="dropdown-menu dropdown-megamenu">
-                                <div class="container">
-                                    <div class="row g-0">
-                                        <!-- Dropdown Menu Links Section-->
-                                        <div class="col-12 col-lg-7">
-                                            <div class="row py-lg-5">
-                                            
-                                                <!-- menu row-->
-                                                <div class="col col-lg-6 mb-5 mb-sm-0">
-                                                    <h6 class="dropdown-heading">Waterproof Layers</h6>
-                                                    <ul class="list-unstyled">
-                                                        <li class="dropdown-list-item"><a class="dropdown-item" href="{{ route('category.index') }}">Waterproof
-                                                                Jackets</a></li>
-                                                        <li class="dropdown-list-item"><a class="dropdown-item" href="{{ route('category.index') }}">Insulated
-                                                                Jackets</a></li>
-                                                        <li class="dropdown-list-item"><a class="dropdown-item" href="{{ route('category.index') }}">Down
-                                                                Jackets</a></li>
-                                                        <li class="dropdown-list-item"><a class="dropdown-item" href="{{ route('category.index') }}">Softshell
-                                                                Jackets</a></li>
-                                                        <li class="dropdown-list-item"><a class="dropdown-item" href="{{ route('category.index') }}">Casual
-                                                                Jackets</a></li>
-                                                        <li class="dropdown-list-item"><a class="dropdown-item" href="{{ route('category.index') }}">Windproof
-                                                                Jackets</a></li>
-                                                        <li class="dropdown-list-item"><a class="dropdown-item" href="{{ route('category.index') }}">Breathable
-                                                                Jackets</a></li>
-                                                        <li class="dropdown-list-item"><a class="dropdown-item" href="{{ route('category.index') }}">Cleaning &
-                                                                Proofing</a></li>
-                                                        <li class="dropdown-list-item"><a class="dropdown-item dropdown-link-all"
-                                                                href="{{ route('category.index') }}">View All</a></li>
-                                                    </ul>
-                                            
-                                                </div>
-                                                <!-- /menu row-->
-                                            
-                                                <!-- menu row-->
-                                                <div class="col col-lg-6">
-                                                    <h6 class="dropdown-heading">Brands</h6>
-                                                    <ul class="list-unstyled">
-                                                        <li class="dropdown-list-item"><a class="dropdown-item" href="{{ route('category.index') }}">Lifestyle &
-                                                                Casual</a></li>
-                                                        <li class="dropdown-list-item"><a class="dropdown-item" href="{{ route('category.index') }}">Walking
-                                                                Shoes</a></li>
-                                                        <li class="dropdown-list-item"><a class="dropdown-item" href="{{ route('category.index') }}">Running
-                                                                Shoes</a></li>
-                                                        <li class="dropdown-list-item"><a class="dropdown-item" href="{{ route('category.index') }}">Military
-                                                                Boots</a></li>
-                                                        <li class="dropdown-list-item"><a class="dropdown-item" href="{{ route('category.index') }}">Fabric Walking
-                                                                Boots</a></li>
-                                                        <li class="dropdown-list-item"><a class="dropdown-item" href="{{ route('category.index') }}">Leather
-                                                                Walking Boots</a></li>
-                                                        <li class="dropdown-list-item"><a class="dropdown-item" href="{{ route('category.index') }}">Wellies</a>
-                                                        </li>
-                                                        <li class="dropdown-list-item"><a class="dropdown-item" href="{{ route('category.index') }}">Winter
-                                                                Footwear</a></li>
-                                                        <li class="dropdown-list-item"><a class="dropdown-item dropdown-link-all"
-                                                                href="{{ route('category.index') }}">View All</a></li>
-                                                    </ul>
-                                                </div>
-                                                <!-- /menu row-->
-                                            
-                                            </div>                    </div>
-                                        <!-- /Dropdown Menu Links Section-->
-                    
-                                        <!-- Dropdown Menu Images Section-->
-                                        <div class="d-none d-lg-block col-lg-5">
-                                            <div class="vw-50 h-100 bg-img-cover bg-pos-center-center position-absolute" style="background-image: url(./assets/images/banners/banner-4.jpg);"></div>
-                                        </div>
-                                        <!-- Dropdown Menu Images Section-->
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- / Womenswear dropdown menu-->
-                        </li>
-                        <li class="nav-item me-lg-4">
-                            <a class="nav-link fw-bolder py-lg-4" href="#">
-                                Kidswear
-                            </a>
-                        </li>
-                        <li class="nav-item me-lg-4">
-                            <a class="nav-link fw-bolder py-lg-4" href="#">
-                                Sale Items
-                            </a>
-                        </li>
-                        <li class="nav-item dropdown me-lg-4">
-                            <a class="nav-link fw-bolder dropdown-toggle py-lg-4" href="#" role="button" data-bs-toggle="dropdown"
-                                aria-haspopup="true" aria-expanded="false">
-                                Demo Pages
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="{{ route('home') }}">Homepage</a></li>
-                                <li><a class="dropdown-item" href="{{ route('category.index') }}">Category</a></li>
-                                <li><a class="dropdown-item" href="{{ route('product.index') }}">Product</a></li>
-                                <li><a class="dropdown-item" href="./cart.html">Cart</a></li>
-                                <li><a class="dropdown-item" href="./checkout.html">Checkout</a></li>
-                              </ul>
-                        </li>
+                    @endforeach
+                      
                     </ul>            </div>
                 <!-- / Main Navigation-->
     
@@ -258,15 +118,7 @@
                     <!-- /Navbar Login-->
     
                     <!-- Navbar Cart-->
-                    <li class="ms-1 d-inline-block position-relative">
-                        <button
-                            class="btn btn-link px-2 text-decoration-none d-flex align-items-center disable-child-pointer"
-                            data-bs-toggle="offcanvas" data-bs-target="#offcanvasCart" aria-controls="offcanvasCart">
-                            <i class="ri-shopping-cart-2-line ri-lg align-middle position-relative z-index-10"></i>
-                            <span
-                                class="fs-xs fw-bolder f-w-5 f-h-5 bg-orange rounded-lg d-block lh-1 pt-1 position-absolute top-0 end-0 z-index-20 mt-2 text-white">2</span>
-                        </button>
-                    </li>
+                    @include('components.cart')
                     <!-- /Navbar Cart-->
     
                 </ul>

@@ -14,13 +14,13 @@ class Category extends Model
     protected $fillable = ['parent_id', 'name', 'status'];  
 
 
-    public function parent() : BelongsTo 
+    public function category() : BelongsTo 
     {
         return $this->belongsTo(Category::class, 'parent_id');
     }
 
 
-    public function children() : HasMany
+    public function subcategories() : HasMany
     {
         return $this->hasMany(Category::class, 'parent_id');
     }
