@@ -122,9 +122,9 @@
                         <!-- Card Product-->
                         <div class="card position-relative h-100 card-listing hover-trigger">
                             <div class="card-header">
+                                @if($product->image)
                                 <picture class="position-relative overflow-hidden d-block bg-light">
-                                  @if($product->image)
-                                    <img class="w-100 img-fluid position-relative z-index-10" title="" src="{{  asset('storage/' . $product->image) }}" alt="{{ $product->name }}">
+                                    <img class="w-100 img-fluid position-relative z-index-10" title="" src="{{   $product->image }}" alt="{{ $product->name }}">
                                 </picture>
                                 @else
                                 <p>No image available</p>
