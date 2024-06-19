@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Category;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Cache;
+use App\Models\Product;
 
 class HomeController extends Controller
 {
@@ -22,10 +23,15 @@ class HomeController extends Controller
                         ->withWhereHas('subcategories')
                         ->select('id', 'parent_id', 'name')
                         ->get();
+
+
         });
 
+
+        $products = Product::with(['category', 'tax'])->select('name', 'price')->get();
+
         
-        return view('home.index', ['categories'=>$categories]);
+        return view('home.index', ['categories'=>$categories, 'products'=> $products]);
         
     }
 

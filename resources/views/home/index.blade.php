@@ -111,20 +111,27 @@
                     }
                   }'>
 
-
+                    
                   <div class="swiper-wrapper pb-5 pe-1">
+                    @foreach ($products as $product)
 
-                    @foreach ($categories as $category)
+                    
                         
                       <div class="swiper-slide d-flex h-auto">
+
                         <!-- Card Product-->
                         <div class="card position-relative h-100 card-listing hover-trigger">
                             <div class="card-header">
                                 <picture class="position-relative overflow-hidden d-block bg-light">
-                                    <img class="w-100 img-fluid position-relative z-index-10" title="" src="{{ asset('/assets/src/assets/images/products/product-1.jpg')}}" alt="">
+                                  @if($product->image)
+                                    <img class="w-100 img-fluid position-relative z-index-10" title="" src="{{  asset('storage/' . $product->image) }}" alt="{{ $product->name }}">
                                 </picture>
+                                @else
+                                <p>No image available</p>
+                                @endif
                                     <picture class="position-absolute z-index-20 start-0 top-0 hover-show bg-light">
-                                        <img class="w-100 img-fluid" title="" src="{{ asset('/assets/src/assets/images/products/product-1b.jpg') }}" alt="">
+                                    <img class="w-100 img-fluid position-relative z-index-10" title="" src="{{  asset('storage/' . $product->image) }} alt="{{ $product->name }}">
+                                    {{-- <img class="w-100 img-fluid" title="" src="{{ asset('/assets/src/assets/images/products/product-1b.jpg') }}" alt=""> --}}
                                     </picture>
                                 <div class="card-actions">
                                     <span class="small text-uppercase tracking-wide fw-bolder text-center d-block">Quick Add</span>
@@ -157,23 +164,28 @@
                                 <i class="ri-star-fill mr-1 text-muted opacity-25"></i>
                             </div>
                         </div> 
+
+
                         <span class="small fw-bolder ms-2 text-muted"> 4.7 (456)</span>
+
+
                                 </div>
 
-                                @foreach ($category->subcategories as $subcategory)
                                     
-                                @endforeach
+                                
                                 <a class="mb-0 mx-2 mx-md-4 fs-p link-cover text-decoration-none d-block text-center"
-                                    href="{{ route('product.index') }}">{{ $subcategory->name }}</a>
-                                    <p class="fw-bolder m-0 mt-2">$1129.99</p>
+                                    href="{{ route('product.index') }}">{{ $product->name  }}</a>
+                                    <p class="fw-bolder m-0 mt-2">${{$product->price}}</p>
 
                             </div>
                         </div>
 
                         <!--/ Card Product-->
                       </div>
-                  
                       @endforeach
+
+                  
+
                     
                     <div class="swiper-slide d-flex h-auto justify-content-center align-items-center">
                       <a href="{{ route('category.index') }}" class="d-flex text-decoration-none flex-column justify-content-center align-items-center">
@@ -183,6 +195,7 @@
                     </div>
                   </div>
                 
+
                   <!-- Buttons-->
                   <div class="swiper-btn swiper-disabled-hide swiper-prev swiper-btn-side btn-icon bg-dark text-white ms-3 shadow-lg mt-n5 ms-n4"><i class="ri-arrow-left-s-line ri-lg"></i></div>
                   <div class="swiper-btn swiper-disabled-hide swiper-next swiper-btn-side swiper-btn-side-right btn-icon bg-dark text-white me-n4 shadow-lg mt-n5"><i class="ri-arrow-right-s-line ri-lg"></i></div>
