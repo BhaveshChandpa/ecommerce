@@ -130,7 +130,7 @@
                                 <p>No image available</p>
                                 @endif
                                     <picture class="position-absolute z-index-20 start-0 top-0 hover-show bg-light">
-                                    <img class="w-100 img-fluid position-relative z-index-10" title="" src="{{  asset('storage/' . $product->image) }} alt="{{ $product->name }}">
+                                    <img class="w-100 img-fluid position-relative z-index-10" title="" src="{{   $product->image }} alt="{{ $product->name }}">
                                     {{-- <img class="w-100 img-fluid" title="" src="{{ asset('/assets/src/assets/images/products/product-1b.jpg') }}" alt=""> --}}
                                     </picture>
                                 <div class="card-actions">
