@@ -33,10 +33,10 @@ class HomeController extends Controller
         $products = Product::with(['category', 'tax'])->select('name', 'price', 'image', 'slug')->get();
 
 
-
-
         
         return view('home.index', ['products'=> $products]);
+        // dd($request->all());
+
         
     }
 

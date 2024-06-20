@@ -174,7 +174,7 @@
                                     
                                 
                                 <a class="mb-0 mx-2 mx-md-4 fs-p link-cover text-decoration-none d-block text-center"
-                                    href="{{ route('product.detail', $product->slug) }}">{{ $product->name  }}</a>
+                                    href="{{ route('product.show', $product->slug) }}">{{ $product->name  }}</a>
                                     <p class="fw-bolder m-0 mt-2">${{$product->price}}</p>
 
                             </div>

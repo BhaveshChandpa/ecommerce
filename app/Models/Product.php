@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Variant;
 
 class Product extends Model
 {
@@ -29,6 +30,12 @@ class Product extends Model
     public function tax(){
         return $this->belongsTo(Tax::class);
 
+    }
+
+
+    public function variant(){
+
+        return $this->belongsToMany(Variant::class);
     }
 
 
