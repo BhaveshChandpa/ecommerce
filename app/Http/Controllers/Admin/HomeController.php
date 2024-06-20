@@ -13,25 +13,30 @@ class HomeController extends Controller
     //
     public function home(){
 
-        $cachekey = 'categories.all';
-        $cacheDuration = 0;
+        // $cachekey = 'categories.all';
+        // $cacheDuration = 0;
 
 
-        $categories = Cache::remember($cachekey, $cacheDuration, function(){
+        // $categories = Cache::remember($cachekey, $cacheDuration, function(){
             
-            return Category::whereNull('parent_id')
-                        ->withWhereHas('subcategories')
-                        ->select('id', 'parent_id', 'name')
-                        ->get();
+        //     return Category::whereNull('parent_id')
+        //                 ->withWhereHas('subcategories')
+        //                 ->select('id', 'parent_id', 'name')
+        //                 ->get();
+
+       
 
 
-        });
+
+        // });
+
+        $products = Product::with(['category', 'tax'])->select('name', 'price', 'image', 'slug')->get();
 
 
-        $products = Product::with(['category', 'tax'])->select('name', 'price')->get();
+
 
         
-        return view('home.index', ['categories'=>$categories, 'products'=> $products]);
+        return view('home.index', ['products'=> $products]);
         
     }
 

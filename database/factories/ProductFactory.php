@@ -29,7 +29,8 @@ class ProductFactory extends Factory
             'subcategory_id' => Category::factory()->create(),
             'price' => $this->faker->randomFloat(2, 10, 100),
             'basic_price' => $this->faker->randomFloat(2, 10, 100),
-            'image' => $this->faker->imageUrl(),
+            // 'image' => $this->faker->imageUrl(),
+            'image' => $this->faker->image('public/storage/',640,480, null, false),
             'tax_id' => Tax::factory(),
 
 
