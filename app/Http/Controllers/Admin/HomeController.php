@@ -24,11 +24,16 @@ class HomeController extends Controller
                         ->select('id', 'parent_id', 'name')
                         ->get();
 
+       
+
+
 
         });
 
-
         $products = Product::with(['category', 'tax'])->select('name', 'price')->get();
+
+
+
 
         
         return view('home.index', ['categories'=>$categories, 'products'=> $products]);
