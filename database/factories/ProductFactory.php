@@ -25,18 +25,12 @@ class ProductFactory extends Factory
 
             'name' => $name,
             'slug' => Str::slug($name),
-            'category_id' => Category::factory()->create(),
-            'subcategory_id' => Category::factory()->create(),
             'price' => $this->faker->randomFloat(2, 10, 100),
             'basic_price' => $this->faker->randomFloat(2, 10, 100),
-            // 'image' => $this->faker->imageUrl(),
-            'image' => $this->faker->image('public/storage/',640,480, null, false),
-            'tax_id' => Tax::factory(),
+            'image' => $this->faker->imageUrl(),
+            // 'image' => $this->faker->image('public/storage/',640,480, null, false),
+            'tax_id' => Tax::inRandomOrder()->first()
 
-
-            
-
-            //
         ];
     }
 }

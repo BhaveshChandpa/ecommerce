@@ -19,7 +19,8 @@ class DatabaseSeeder extends Seeder
         //     'email' => 'test@example.com',
         // ]);
         $this->call([TaxSeeder::class]);
-
+        $this->call([VariantSeeder::class]);
         $this->call([CategorySeeder::class]);
+       $this->call([ProductSeeder::class]);
     }
 }

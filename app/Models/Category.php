@@ -11,22 +11,26 @@ class Category extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['parent_id', 'name', 'status'];  
+    protected $fillable = ['parent_id', 'name', 'status'];
 
 
-    public function category() : BelongsTo 
+    public function scopeIsSubcategories($query)
+    {
+        return $query->whereNotNull('parent_id');
+    }
+    public function category(): BelongsTo
     {
         return $this->belongsTo(Category::class, 'parent_id');
     }
 
 
-    public function subcategories() : HasMany
+    public function subcategories(): HasMany
     {
         return $this->hasMany(Category::class, 'parent_id');
     }
 
-    public function product() : HasMany
+    public function product(): HasMany
     {
-        return $this->hasMany(Product::class,'product_id');
+        return $this->hasMany(Product::class, 'product_id');
     }
 }

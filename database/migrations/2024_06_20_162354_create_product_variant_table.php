@@ -14,10 +14,8 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('product_variant', function (Blueprint $table) {
-            $table->id();
             $table->foreignIdFor(Product::class);
             $table->foreignIdFor(Variant::class);
-            $table->timestamps();
         });
     }
 
