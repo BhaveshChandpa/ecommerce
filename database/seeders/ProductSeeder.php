@@ -16,7 +16,9 @@ class ProductSeeder extends Seeder
     public function run(): void
     {
         $variants = Variant::get();
-         Category::IsSubcategories()->get()->each(
+         Category::IsSubcategories()->get()
+         
+         ->each(
             function ($subcategory) use($variants) {
                 Product::factory()
                 ->count(5)

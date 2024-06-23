@@ -30,7 +30,7 @@ class HomeController extends Controller
 
         // });
 
-        $products = Product::with(['category', 'tax'])->select('name', 'price', 'image', 'slug')->get();
+        $products = Product::with(['variants:id,name'])->select('id','name', 'price', 'image', 'slug')->take(5)->get();
 
 
         

@@ -29,9 +29,7 @@ Route::get('/category', [CategoryController::class, 'index'])->name('category.in
 
 
 // Product Routes
-Route::resource('product', ProductController::class)->parameters([
-    'product' => 'product:slug'
-]);
+Route::resource('product', ProductController::class)->parameters(['product' => 'product:slug'])->only(['index','show']);
 
 
 // Route::get('products', [AdminController::class, 'products']);

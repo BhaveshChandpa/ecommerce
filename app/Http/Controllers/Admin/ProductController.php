@@ -14,7 +14,7 @@ class ProductController extends Controller
     public function index()
     {
         $products = Product::all();
-        return view('product.index', ['products'=>$products]);
+        return view('product.index', ['products' => $products]);
     }
 
     /**
@@ -38,7 +38,9 @@ class ProductController extends Controller
      */
     public function show(Product $product)
     {
-        return view('product.show', ['product'=>$product]);
+        $product->load('variants:name,id');
+
+        return view('product.show', ['product' => $product]);
     }
 
     /**
