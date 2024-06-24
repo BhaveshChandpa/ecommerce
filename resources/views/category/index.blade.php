@@ -23,7 +23,7 @@
                       <li class="breadcrumb-item breadcrumb-light"><a href="#">Activities</a></li>
                       <li class="breadcrumb-item active breadcrumb-light" aria-current="page">Clothing</li>
                     </ol>
-                </nav>                <h1 class="fw-bold display-6 mb-4 text-white">Latest Arrivals (121)</h1>
+                </nav>                <h1 class="fw-bold display-6 mb-4 text-white">Latest Arrivals ({{ $category->count()}})</h1>
                 <div class="col-12 col-md-6">
                     <p class="lead text-white mb-0">
                         Move, stretch, jump and hike in our latest waterproof arrivals. We've got you covered for your
@@ -47,31 +47,22 @@
                         
                                 <!-- Filter Category -->
                                 <div class="mb-4">
-                                    <h2 class="mb-4 fs-6 mt-2 fw-bolder">Jacket Category</h2>
+                                    <h2 class="mb-4 fs-6 mt-2 fw-bolder">{{ $category->name }}</h2>
                                     <nav>
                                         <ul class="list-unstyled list-default-text">
+
+                                                
+                                            @foreach ($category->subcategories as $subcategories)
+
+                                                
                                                 <li class="mb-2"><a
                                                     class="text-decoration-none text-body text-secondary-hover transition-all d-flex justify-content-between align-items-center"
-                                                    href="#"><span><i class="ri-arrow-right-s-line align-bottom ms-n1"></i> Waterproof Jackets</span> <span class="text-muted ms-4">(21)</span></a>
-                                                </li>                        <li class="mb-2"><a
-                                                    class="text-decoration-none text-body text-secondary-hover transition-all d-flex justify-content-between align-items-center"
-                                                    href="#"><span><i class="ri-arrow-right-s-line align-bottom ms-n1"></i> Down Jackets</span> <span class="text-muted ms-4">(13)</span></a>
-                                                </li>                        <li class="mb-2"><a
-                                                    class="text-decoration-none text-body text-secondary-hover transition-all d-flex justify-content-between align-items-center"
-                                                    href="#"><span><i class="ri-arrow-right-s-line align-bottom ms-n1"></i> Windproof Jackets</span> <span class="text-muted ms-4">(18)</span></a>
-                                                </li>                        <li class="mb-2"><a
-                                                    class="text-decoration-none text-body text-secondary-hover transition-all d-flex justify-content-between align-items-center"
-                                                    href="#"><span><i class="ri-arrow-right-s-line align-bottom ms-n1"></i> Hiking Jackets</span> <span class="text-muted ms-4">(25)</span></a>
-                                                </li>                        <li class="mb-2"><a
-                                                    class="text-decoration-none text-body text-secondary-hover transition-all d-flex justify-content-between align-items-center"
-                                                    href="#"><span><i class="ri-arrow-right-s-line align-bottom ms-n1"></i> Climbing Jackets</span> <span class="text-muted ms-4">(11)</span></a>
-                                                </li>                        <li class="mb-2"><a
-                                                    class="text-decoration-none text-body text-secondary-hover transition-all d-flex justify-content-between align-items-center"
-                                                    href="#"><span><i class="ri-arrow-right-s-line align-bottom ms-n1"></i> Trekking Jackets</span> <span class="text-muted ms-4">(19)</span></a>
-                                                </li>                        <li class="mb-2"><a
-                                                    class="text-decoration-none text-body text-secondary-hover transition-all d-flex justify-content-between align-items-center"
-                                                    href="#"><span><i class="ri-arrow-right-s-line align-bottom ms-n1"></i> Allround Jackets</span> <span class="text-muted ms-4">(24)</span></a>
-                                                </li>                </ul>
+                                                    href="#"><span><i class="ri-arrow-right-s-line align-bottom ms-n1"></i> {{ $subcategories->name }}</span> <span class="text-muted ms-4">( {{ $category->subcategories->count() }} )</span></a>
+                                                </li>    
+                                                
+                                            @endforeach
+                                                
+                                        </ul>
                                     </nav>
                                 </div>
                                 <!-- / Filter Category-->
@@ -338,12 +329,16 @@
 
                     <!-- Products-->
                     <div class="row g-4 mb-5">
+                        @foreach ($product as $product)
+                            
                                 <div class="col-12 col-sm-6 col-md-4">
+                                    {{-- subcategoryies loop --}}
+                                        
                                     <!-- Card Product-->
                                     <div class="card position-relative h-100 card-listing hover-trigger">
                                         <div class="card-header">
                                             <picture class="position-relative overflow-hidden d-block bg-light">
-                                                <img class="w-100 img-fluid position-relative z-index-10" title="" src="{{ asset('assets/src/assets/images/products/product-1.jpg') }}" alt="">
+                                                <img class="w-100 img-fluid position-relative z-index-10" title="" src="{{ $product->image }}" alt="">
                                             </picture>
                                                 <picture class="position-absolute z-index-20 start-0 top-0 hover-show bg-light">
                                                     <img class="w-100 img-fluid" title="" src="{{ asset('assets/src/assets/images/products/product-1b.jpg') }}" alt="">
@@ -351,15 +346,21 @@
                                             <div class="card-actions">
                                                 <span class="small text-uppercase tracking-wide fw-bolder text-center d-block">Quick Add</span>
                                                 <div class="d-flex justify-content-center align-items-center flex-wrap mt-3">
-                                                    <button class="btn btn-outline-dark btn-sm mx-2">S</button>
-                                                    <button class="btn btn-outline-dark btn-sm mx-2">M</button>
-                                                    <button class="btn btn-outline-dark btn-sm mx-2">L</button>
+                                                   
+                                                    @foreach ($product->variants as $variant)
+                                                        
+                                                    <button class="btn btn-outline-dark btn-sm mx-2">{{ $variant->name }}</button>
+
+                                                    @endforeach
+
+                                                    
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="card-body px-0 text-center">
                                             <div class="d-flex justify-content-center align-items-center mx-auto mb-1">
                                                 <!-- Review Stars Small-->
+
                                     <div class="rating position-relative d-table">
                                         <div class="position-absolute stars" style="width: 90%">
                                             <i class="ri-star-fill text-dark mr-1"></i>
@@ -375,153 +376,23 @@
                                             <i class="ri-star-fill mr-1 text-muted opacity-25"></i>
                                             <i class="ri-star-fill mr-1 text-muted opacity-25"></i>
                                         </div>
-                                    </div> <span class="small fw-bolder ms-2 text-muted"> 4.7 (456)</span>
+                                    </div> 
+                                    <span class="small fw-bolder ms-2 text-muted"> 4.7 (456)</span>
                                             </div>
                                             <a class="mb-0 mx-2 mx-md-4 fs-p link-cover text-decoration-none d-block text-center"
-                                                href="{{ route('product.index') }}">Full Zip Hoodie</a>
+                                                href="{{ route('product.index') }}">{{ $product->name }}</a>
                                                 <p class="fw-bolder m-0 mt-2">$1129.99</p>
                                         </div>
+                                       
+                                        
                                     </div>
+
                                     <!--/ Card Product-->
+
                                 </div>
-                                <div class="col-12 col-sm-6 col-md-4">
-                                    <!-- Card Product-->
-                                    <div class="card position-relative h-100 card-listing hover-trigger">
-                                            <span class="badge card-badge bg-secondary">-25%</span>
-                                        <div class="card-header">
-                                            <picture class="position-relative overflow-hidden d-block bg-light">
-                                                <img class="w-100 img-fluid position-relative z-index-10" title="" src="{{ asset('assets/src/assets/images/products/product-2.jpg') }}" alt="">
-                                            </picture>
-                                            <div class="card-actions">
-                                                <span class="small text-uppercase tracking-wide fw-bolder text-center d-block">Quick Add</span>
-                                                <div class="d-flex justify-content-center align-items-center flex-wrap mt-3">
-                                                    <button class="btn btn-outline-dark btn-sm mx-2">S</button>
-                                                    <button class="btn btn-outline-dark btn-sm mx-2">M</button>
-                                                    <button class="btn btn-outline-dark btn-sm mx-2">L</button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="card-body px-0 text-center">
-                                            <div class="d-flex justify-content-center align-items-center mx-auto mb-1">
-                                                <!-- Review Stars Small-->
-                                    <div class="rating position-relative d-table">
-                                        <div class="position-absolute stars" style="width: 60%">
-                                            <i class="ri-star-fill text-dark mr-1"></i>
-                                            <i class="ri-star-fill text-dark mr-1"></i>
-                                            <i class="ri-star-fill text-dark mr-1"></i>
-                                            <i class="ri-star-fill text-dark mr-1"></i>
-                                            <i class="ri-star-fill text-dark mr-1"></i>
-                                        </div>
-                                        <div class="stars">
-                                            <i class="ri-star-fill mr-1 text-muted opacity-25"></i>
-                                            <i class="ri-star-fill mr-1 text-muted opacity-25"></i>
-                                            <i class="ri-star-fill mr-1 text-muted opacity-25"></i>
-                                            <i class="ri-star-fill mr-1 text-muted opacity-25"></i>
-                                            <i class="ri-star-fill mr-1 text-muted opacity-25"></i>
-                                        </div>
-                                    </div> <span class="small fw-bolder ms-2 text-muted"> 4.4 (1289)</span>
-                                            </div>
-                                            <a class="mb-0 mx-2 mx-md-4 fs-p link-cover text-decoration-none d-block text-center"
-                                                href="{{ route('product.index') }}">Mens Sherpa Hoodie</a>
-                                                <div class="d-flex justify-content-center align-items-center mt-2">
-                                                    <p class="mb-0 me-2 text-danger fw-bolder">$<span>599.55</span></p>
-                                                    <p class="mb-0 text-muted fw-bolder"><s>$<span>150.00</span></s></p>
-                                                </div>
-                                        </div>
-                                    </div>
-                                    <!--/ Card Product-->
-                                </div>
-                                <div class="col-12 col-sm-6 col-md-4">
-                                    <!-- Card Product-->
-                                    <div class="card position-relative h-100 card-listing hover-trigger">
-                                            <span class="badge card-badge bg-secondary">-65%</span>
-                                        <div class="card-header">
-                                            <picture class="position-relative overflow-hidden d-block bg-light">
-                                                <img class="w-100 img-fluid position-relative z-index-10" title="" src="{{ asset('assets/src/assets/images/products/product-2.jpg') }}" alt="">
-                                            </picture>
-                                            <div class="card-actions">
-                                                <span class="small text-uppercase tracking-wide fw-bolder text-center d-block">Quick Add</span>
-                                                <div class="d-flex justify-content-center align-items-center flex-wrap mt-3">
-                                                    <button class="btn btn-outline-dark btn-sm mx-2">S</button>
-                                                    <button class="btn btn-outline-dark btn-sm mx-2">M</button>
-                                                    <button class="btn btn-outline-dark btn-sm mx-2">L</button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="card-body px-0 text-center">
-                                            <div class="d-flex justify-content-center align-items-center mx-auto mb-1">
-                                                <!-- Review Stars Small-->
-                                    <div class="rating position-relative d-table">
-                                        <div class="position-absolute stars" style="width: 20%">
-                                            <i class="ri-star-fill text-dark mr-1"></i>
-                                            <i class="ri-star-fill text-dark mr-1"></i>
-                                            <i class="ri-star-fill text-dark mr-1"></i>
-                                            <i class="ri-star-fill text-dark mr-1"></i>
-                                            <i class="ri-star-fill text-dark mr-1"></i>
-                                        </div>
-                                        <div class="stars">
-                                            <i class="ri-star-fill mr-1 text-muted opacity-25"></i>
-                                            <i class="ri-star-fill mr-1 text-muted opacity-25"></i>
-                                            <i class="ri-star-fill mr-1 text-muted opacity-25"></i>
-                                            <i class="ri-star-fill mr-1 text-muted opacity-25"></i>
-                                            <i class="ri-star-fill mr-1 text-muted opacity-25"></i>
-                                        </div>
-                                    </div> <span class="small fw-bolder ms-2 text-muted"> 4.7 (754)</span>
-                                            </div>
-                                            <a class="mb-0 mx-2 mx-md-4 fs-p link-cover text-decoration-none d-block text-center"
-                                                href="{{ route('product.index') }}">Womens Essentials Hoodie</a>
-                                                <div class="d-flex justify-content-center align-items-center mt-2">
-                                                    <p class="mb-0 me-2 text-danger fw-bolder">$<span>779.55</span></p>
-                                                    <p class="mb-0 text-muted fw-bolder"><s>$<span>1100.00</span></s></p>
-                                                </div>
-                                        </div>
-                                    </div>
-                                    <!--/ Card Product-->
-                                </div>
-                                <div class="col-12 col-sm-6 col-md-4">
-                                    <!-- Card Product-->
-                                    <div class="card position-relative h-100 card-listing hover-trigger">
-                                        <div class="card-header">
-                                            <picture class="position-relative overflow-hidden d-block bg-light">
-                                                <img class="w-100 img-fluid position-relative z-index-10" title="" src="{{ asset('assets/src/assets/images/products/product-4.jpg') }}" alt="">
-                                            </picture>
-                                            <div class="card-actions">
-                                                <span class="small text-uppercase tracking-wide fw-bolder text-center d-block">Quick Add</span>
-                                                <div class="d-flex justify-content-center align-items-center flex-wrap mt-3">
-                                                    <button class="btn btn-outline-dark btn-sm mx-2">S</button>
-                                                    <button class="btn btn-outline-dark btn-sm mx-2">M</button>
-                                                    <button class="btn btn-outline-dark btn-sm mx-2">L</button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="card-body px-0 text-center">
-                                            <div class="d-flex justify-content-center align-items-center mx-auto mb-1">
-                                                <!-- Review Stars Small-->
-                                    <div class="rating position-relative d-table">
-                                        <div class="position-absolute stars" style="width: 70%">
-                                            <i class="ri-star-fill text-dark mr-1"></i>
-                                            <i class="ri-star-fill text-dark mr-1"></i>
-                                            <i class="ri-star-fill text-dark mr-1"></i>
-                                            <i class="ri-star-fill text-dark mr-1"></i>
-                                            <i class="ri-star-fill text-dark mr-1"></i>
-                                        </div>
-                                        <div class="stars">
-                                            <i class="ri-star-fill mr-1 text-muted opacity-25"></i>
-                                            <i class="ri-star-fill mr-1 text-muted opacity-25"></i>
-                                            <i class="ri-star-fill mr-1 text-muted opacity-25"></i>
-                                            <i class="ri-star-fill mr-1 text-muted opacity-25"></i>
-                                            <i class="ri-star-fill mr-1 text-muted opacity-25"></i>
-                                        </div>
-                                    </div> <span class="small fw-bolder ms-2 text-muted"> 4.4 (1289)</span>
-                                            </div>
-                                            <a class="mb-0 mx-2 mx-md-4 fs-p link-cover text-decoration-none d-block text-center"
-                                                href="{{ route('product.index') }}">Elevated Lined Hoodie</a>
-                                                <p class="fw-bolder m-0 mt-2">$1829.99</p>
-                                        </div>
-                                    </div>
-                                    <!--/ Card Product-->
-                                </div>
-                        <div class="d-none d-md-flex col-md-8">
+                        @endforeach
+                              
+                        {{-- <div class="d-none d-md-flex col-md-8">
                             <div class="w-100 h-100 position-relative">
                                 <div class="position-absolute w-50 h-100 start-0 bottom-0 top-0 bg-pos-center-center bg-img-cover"
                                     style="background-image: url(./assets/images/banners/banner-3.jpg);">
@@ -535,280 +406,9 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </div> --}}
 
-                                <div class="col-12 col-sm-6 col-md-4">
-                                    <!-- Card Product-->
-                                    <div class="card position-relative h-100 card-listing hover-trigger">
-                                        <div class="card-header">
-                                            <picture class="position-relative overflow-hidden d-block bg-light">
-                                                <img class="w-100 img-fluid position-relative z-index-10" title="" src="{{ asset('assets/src/assets/images/products/product-5.jpg') }}" alt="">
-                                            </picture>
-                                                <picture class="position-absolute z-index-20 start-0 top-0 hover-show bg-light">
-                                                    <img class="w-100 img-fluid" title="" src="./assets/images/products/product-1b.jpg" alt="">
-                                                </picture>
-                                            <div class="card-actions">
-                                                <span class="small text-uppercase tracking-wide fw-bolder text-center d-block">Quick Add</span>
-                                                <div class="d-flex justify-content-center align-items-center flex-wrap mt-3">
-                                                    <button class="btn btn-outline-dark btn-sm mx-2">S</button>
-                                                    <button class="btn btn-outline-dark btn-sm mx-2">M</button>
-                                                    <button class="btn btn-outline-dark btn-sm mx-2">L</button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="card-body px-0 text-center">
-                                            <div class="d-flex justify-content-center align-items-center mx-auto mb-1">
-                                                <!-- Review Stars Small-->
-                                    <div class="rating position-relative d-table">
-                                        <div class="position-absolute stars" style="width: 90%">
-                                            <i class="ri-star-fill text-dark mr-1"></i>
-                                            <i class="ri-star-fill text-dark mr-1"></i>
-                                            <i class="ri-star-fill text-dark mr-1"></i>
-                                            <i class="ri-star-fill text-dark mr-1"></i>
-                                            <i class="ri-star-fill text-dark mr-1"></i>
-                                        </div>
-                                        <div class="stars">
-                                            <i class="ri-star-fill mr-1 text-muted opacity-25"></i>
-                                            <i class="ri-star-fill mr-1 text-muted opacity-25"></i>
-                                            <i class="ri-star-fill mr-1 text-muted opacity-25"></i>
-                                            <i class="ri-star-fill mr-1 text-muted opacity-25"></i>
-                                            <i class="ri-star-fill mr-1 text-muted opacity-25"></i>
-                                        </div>
-                                    </div> <span class="small fw-bolder ms-2 text-muted"> 4.7 (456)</span>
-                                            </div>
-                                            <a class="mb-0 mx-2 mx-md-4 fs-p link-cover text-decoration-none d-block text-center"
-                                                href="{{ route('product.index') }}">Full Zip Hoodie</a>
-                                                <p class="fw-bolder m-0 mt-2">$1129.99</p>
-                                        </div>
-                                    </div>
-                                    <!--/ Card Product-->
-                                </div>
-                                <div class="col-12 col-sm-6 col-md-4">
-                                    <!-- Card Product-->
-                                    <div class="card position-relative h-100 card-listing hover-trigger">
-                                            <span class="badge card-badge bg-secondary">-25%</span>
-                                        <div class="card-header">
-                                            <picture class="position-relative overflow-hidden d-block bg-light">
-                                                <img class="w-100 img-fluid position-relative z-index-10" title="" src="{{ asset('assets/src/assets/images/products/product-2.jpg') }}" alt="">
-                                            </picture>
-                                            <div class="card-actions">
-                                                <span class="small text-uppercase tracking-wide fw-bolder text-center d-block">Quick Add</span>
-                                                <div class="d-flex justify-content-center align-items-center flex-wrap mt-3">
-                                                    <button class="btn btn-outline-dark btn-sm mx-2">S</button>
-                                                    <button class="btn btn-outline-dark btn-sm mx-2">M</button>
-                                                    <button class="btn btn-outline-dark btn-sm mx-2">L</button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="card-body px-0 text-center">
-                                            <div class="d-flex justify-content-center align-items-center mx-auto mb-1">
-                                                <!-- Review Stars Small-->
-                                    <div class="rating position-relative d-table">
-                                        <div class="position-absolute stars" style="width: 60%">
-                                            <i class="ri-star-fill text-dark mr-1"></i>
-                                            <i class="ri-star-fill text-dark mr-1"></i>
-                                            <i class="ri-star-fill text-dark mr-1"></i>
-                                            <i class="ri-star-fill text-dark mr-1"></i>
-                                            <i class="ri-star-fill text-dark mr-1"></i>
-                                        </div>
-                                        <div class="stars">
-                                            <i class="ri-star-fill mr-1 text-muted opacity-25"></i>
-                                            <i class="ri-star-fill mr-1 text-muted opacity-25"></i>
-                                            <i class="ri-star-fill mr-1 text-muted opacity-25"></i>
-                                            <i class="ri-star-fill mr-1 text-muted opacity-25"></i>
-                                            <i class="ri-star-fill mr-1 text-muted opacity-25"></i>
-                                        </div>
-                                    </div> <span class="small fw-bolder ms-2 text-muted"> 4.4 (1289)</span>
-                                            </div>
-                                            <a class="mb-0 mx-2 mx-md-4 fs-p link-cover text-decoration-none d-block text-center"
-                                                href="{{ route('product.index') }}">Mens Sherpa Hoodie</a>
-                                                <div class="d-flex justify-content-center align-items-center mt-2">
-                                                    <p class="mb-0 me-2 text-danger fw-bolder">$<span>599.55</span></p>
-                                                    <p class="mb-0 text-muted fw-bolder"><s>$<span>150.00</span></s></p>
-                                                </div>
-                                        </div>
-                                    </div>
-                                    <!--/ Card Product-->
-                                </div>
-                                <div class="col-12 col-sm-6 col-md-4">
-                                    <!-- Card Product-->
-                                    <div class="card position-relative h-100 card-listing hover-trigger">
-                                            <span class="badge card-badge bg-secondary">-65%</span>
-                                        <div class="card-header">
-                                            <picture class="position-relative overflow-hidden d-block bg-light">
-                                                <img class="w-100 img-fluid position-relative z-index-10" title="" src="{{ asset('assets/src/assets/images/products/product-3.jpg') }}" alt="">
-                                            </picture>
-                                            <div class="card-actions">
-                                                <span class="small text-uppercase tracking-wide fw-bolder text-center d-block">Quick Add</span>
-                                                <div class="d-flex justify-content-center align-items-center flex-wrap mt-3">
-                                                    <button class="btn btn-outline-dark btn-sm mx-2">S</button>
-                                                    <button class="btn btn-outline-dark btn-sm mx-2">M</button>
-                                                    <button class="btn btn-outline-dark btn-sm mx-2">L</button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="card-body px-0 text-center">
-                                            <div class="d-flex justify-content-center align-items-center mx-auto mb-1">
-                                                <!-- Review Stars Small-->
-                                    <div class="rating position-relative d-table">
-                                        <div class="position-absolute stars" style="width: 20%">
-                                            <i class="ri-star-fill text-dark mr-1"></i>
-                                            <i class="ri-star-fill text-dark mr-1"></i>
-                                            <i class="ri-star-fill text-dark mr-1"></i>
-                                            <i class="ri-star-fill text-dark mr-1"></i>
-                                            <i class="ri-star-fill text-dark mr-1"></i>
-                                        </div>
-                                        <div class="stars">
-                                            <i class="ri-star-fill mr-1 text-muted opacity-25"></i>
-                                            <i class="ri-star-fill mr-1 text-muted opacity-25"></i>
-                                            <i class="ri-star-fill mr-1 text-muted opacity-25"></i>
-                                            <i class="ri-star-fill mr-1 text-muted opacity-25"></i>
-                                            <i class="ri-star-fill mr-1 text-muted opacity-25"></i>
-                                        </div>
-                                    </div> <span class="small fw-bolder ms-2 text-muted"> 4.7 (754)</span>
-                                            </div>
-                                            <a class="mb-0 mx-2 mx-md-4 fs-p link-cover text-decoration-none d-block text-center"
-                                                href="{{ route('product.index') }}">Womens Essentials Hoodie</a>
-                                                <div class="d-flex justify-content-center align-items-center mt-2">
-                                                    <p class="mb-0 me-2 text-danger fw-bolder">$<span>779.55</span></p>
-                                                    <p class="mb-0 text-muted fw-bolder"><s>$<span>1100.00</span></s></p>
-                                                </div>
-                                        </div>
-                                    </div>
-                                    <!--/ Card Product-->
-                                </div>
-                                <div class="col-12 col-sm-6 col-md-4">
-                                    <!-- Card Product-->
-                                    <div class="card position-relative h-100 card-listing hover-trigger">
-                                        <div class="card-header">
-                                            <picture class="position-relative overflow-hidden d-block bg-light">
-                                                <img class="w-100 img-fluid position-relative z-index-10" title="" src="{{ asset('assets/src/assets/images/products/product-4.jpg') }}" alt="">
-                                            </picture>
-                                            <div class="card-actions">
-                                                <span class="small text-uppercase tracking-wide fw-bolder text-center d-block">Quick Add</span>
-                                                <div class="d-flex justify-content-center align-items-center flex-wrap mt-3">
-                                                    <button class="btn btn-outline-dark btn-sm mx-2">S</button>
-                                                    <button class="btn btn-outline-dark btn-sm mx-2">M</button>
-                                                    <button class="btn btn-outline-dark btn-sm mx-2">L</button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="card-body px-0 text-center">
-                                            <div class="d-flex justify-content-center align-items-center mx-auto mb-1">
-                                                <!-- Review Stars Small-->
-                                    <div class="rating position-relative d-table">
-                                        <div class="position-absolute stars" style="width: 70%">
-                                            <i class="ri-star-fill text-dark mr-1"></i>
-                                            <i class="ri-star-fill text-dark mr-1"></i>
-                                            <i class="ri-star-fill text-dark mr-1"></i>
-                                            <i class="ri-star-fill text-dark mr-1"></i>
-                                            <i class="ri-star-fill text-dark mr-1"></i>
-                                        </div>
-                                        <div class="stars">
-                                            <i class="ri-star-fill mr-1 text-muted opacity-25"></i>
-                                            <i class="ri-star-fill mr-1 text-muted opacity-25"></i>
-                                            <i class="ri-star-fill mr-1 text-muted opacity-25"></i>
-                                            <i class="ri-star-fill mr-1 text-muted opacity-25"></i>
-                                            <i class="ri-star-fill mr-1 text-muted opacity-25"></i>
-                                        </div>
-                                    </div> <span class="small fw-bolder ms-2 text-muted"> 4.4 (1289)</span>
-                                            </div>
-                                            <a class="mb-0 mx-2 mx-md-4 fs-p link-cover text-decoration-none d-block text-center"
-                                                href="{{ route('product.index') }}">Elevated Lined Hoodie</a>
-                                                <p class="fw-bolder m-0 mt-2">$1829.99</p>
-                                        </div>
-                                    </div>
-                                    <!--/ Card Product-->
-                                </div>
-                                <div class="col-12 col-sm-6 col-md-4">
-                                    <!-- Card Product-->
-                                    <div class="card position-relative h-100 card-listing hover-trigger">
-                                        <div class="card-header">
-                                            <picture class="position-relative overflow-hidden d-block bg-light">
-                                                <img class="w-100 img-fluid position-relative z-index-10" title="" src="{{ asset('assets/src/assets/images/products/product-5.jpg') }}" alt="">
-                                            </picture>
-                                                <picture class="position-absolute z-index-20 start-0 top-0 hover-show bg-light">
-                                                    <img class="w-100 img-fluid" title="" src="./assets/images/products/product-5b.jpg" alt="">
-                                                </picture>
-                                            <div class="card-actions">
-                                                <span class="small text-uppercase tracking-wide fw-bolder text-center d-block">Quick Add</span>
-                                                <div class="d-flex justify-content-center align-items-center flex-wrap mt-3">
-                                                    <button class="btn btn-outline-dark btn-sm mx-2">S</button>
-                                                    <button class="btn btn-outline-dark btn-sm mx-2">M</button>
-                                                    <button class="btn btn-outline-dark btn-sm mx-2">L</button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="card-body px-0 text-center">
-                                            <div class="d-flex justify-content-center align-items-center mx-auto mb-1">
-                                                <!-- Review Stars Small-->
-                                    <div class="rating position-relative d-table">
-                                        <div class="position-absolute stars" style="width: 84%">
-                                            <i class="ri-star-fill text-dark mr-1"></i>
-                                            <i class="ri-star-fill text-dark mr-1"></i>
-                                            <i class="ri-star-fill text-dark mr-1"></i>
-                                            <i class="ri-star-fill text-dark mr-1"></i>
-                                            <i class="ri-star-fill text-dark mr-1"></i>
-                                        </div>
-                                        <div class="stars">
-                                            <i class="ri-star-fill mr-1 text-muted opacity-25"></i>
-                                            <i class="ri-star-fill mr-1 text-muted opacity-25"></i>
-                                            <i class="ri-star-fill mr-1 text-muted opacity-25"></i>
-                                            <i class="ri-star-fill mr-1 text-muted opacity-25"></i>
-                                            <i class="ri-star-fill mr-1 text-muted opacity-25"></i>
-                                        </div>
-                                    </div> <span class="small fw-bolder ms-2 text-muted"> 4.8 (189)</span>
-                                            </div>
-                                            <a class="mb-0 mx-2 mx-md-4 fs-p link-cover text-decoration-none d-block text-center"
-                                                href="{{ route('product.index') }}">Mens Slab Hoodie</a>
-                                                <p class="fw-bolder m-0 mt-2">$29.99</p>
-                                        </div>
-                                    </div>
-                                    <!--/ Card Product-->
-                                </div>
-                                <div class="col-12 col-sm-6 col-md-4">
-                                    <!-- Card Product-->
-                                    <div class="card position-relative h-100 card-listing hover-trigger">
-                                        <div class="card-header">
-                                            <picture class="position-relative overflow-hidden d-block bg-light">
-                                                <img class="w-100 img-fluid position-relative z-index-10" title="" src="{{ asset('assets/src/assets/images/products/product-6.jpg') }}" alt="">
-                                            </picture>
-                                            <div class="card-actions">
-                                                <span class="small text-uppercase tracking-wide fw-bolder text-center d-block">Quick Add</span>
-                                                <div class="d-flex justify-content-center align-items-center flex-wrap mt-3">
-                                                    <button class="btn btn-outline-dark btn-sm mx-2">S</button>
-                                                    <button class="btn btn-outline-dark btn-sm mx-2">M</button>
-                                                    <button class="btn btn-outline-dark btn-sm mx-2">L</button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="card-body px-0 text-center">
-                                            <div class="d-flex justify-content-center align-items-center mx-auto mb-1">
-                                                <!-- Review Stars Small-->
-                                    <div class="rating position-relative d-table">
-                                        <div class="position-absolute stars" style="width: 60%">
-                                            <i class="ri-star-fill text-dark mr-1"></i>
-                                            <i class="ri-star-fill text-dark mr-1"></i>
-                                            <i class="ri-star-fill text-dark mr-1"></i>
-                                            <i class="ri-star-fill text-dark mr-1"></i>
-                                            <i class="ri-star-fill text-dark mr-1"></i>
-                                        </div>
-                                        <div class="stars">
-                                            <i class="ri-star-fill mr-1 text-muted opacity-25"></i>
-                                            <i class="ri-star-fill mr-1 text-muted opacity-25"></i>
-                                            <i class="ri-star-fill mr-1 text-muted opacity-25"></i>
-                                            <i class="ri-star-fill mr-1 text-muted opacity-25"></i>
-                                            <i class="ri-star-fill mr-1 text-muted opacity-25"></i>
-                                        </div>
-                                    </div> <span class="small fw-bolder ms-2 text-muted"> 4.5 (1567)</span>
-                                            </div>
-                                            <a class="mb-0 mx-2 mx-md-4 fs-p link-cover text-decoration-none d-block text-center"
-                                                href="{{ route('product.index') }}">Blocked Striped Hoodie</a>
-                                                <p class="fw-bolder m-0 mt-2">$1329.99</p>
-                                        </div>
-                                    </div>
-                                    <!--/ Card Product-->
-                                </div>
+                       
                     </div>
                     <!-- / Products-->
 

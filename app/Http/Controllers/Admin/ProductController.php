@@ -38,7 +38,11 @@ class ProductController extends Controller
      */
     public function show(Product $product)
     {
+        // dd($product);
+
         $product->load('variants:name,id');
+
+        // dd($product);
 
         return view('product.show', ['product' => $product]);
     }
