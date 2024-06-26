@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Product;
 use Illuminate\Http\Request;
+use App\Helpers\helper;
 
 class ProductController extends Controller
 {
@@ -40,11 +41,15 @@ class ProductController extends Controller
     {
         // dd($product);
 
-        $product->load('variants:name,id');
+        // $product->load('variants:name,id');
+        // $product = Product::select('id', 'name', 'image')->first();
+        $product =  helper::FetchSingleProduct();
+        $products = Product::with('variants')->get();
+        // dd($products->varinats);
 
         // dd($product);
 
-        return view('product.show', ['product' => $product]);
+        return view('product.show', ['products' => $products, 'product' => $product]);
     }
 
     /**

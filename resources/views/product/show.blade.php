@@ -40,10 +40,10 @@
                                 <div class="swiper-wrapper">
                                   <div class="swiper-slide bg-light bg-light h-auto">
                                     <picture>
-                                        <img class="img-fluid mx-auto d-table" src="./assets/images/products/product-5.jpg" alt="Bootstrap 5 Template by Pixel Rocket">
+                                        <img class="img-fluid mx-auto d-table" src="{{ $product->image }}" alt="Bootstrap 5 Template by Pixel Rocket">
                                     </picture>
                                   </div>
-                                  <div class="swiper-slide bg-light bg-light h-auto">
+                                  {{-- <div class="swiper-slide bg-light bg-light h-auto">
                                       <picture>
                                         <img class="img-fluid mx-auto d-table" src="./assets/images/products/product-5b.jpg" alt="Bootstrap 5 Template by Pixel Rocket">
                                     </picture>
@@ -52,14 +52,14 @@
                                       <picture>
                                         <img class="img-fluid mx-auto d-table" src="./assets/images/products/product-5c.jpg" alt="Bootstrap 5 Template by Pixel Rocket">
                                     </picture>
-                                  </div>
+                                  </div> --}}
                                 </div>
                               </div>
                               <div class="swiper-container gallery-top-vertical col-10">
                                 <div class="swiper-wrapper">
                                     <div class="swiper-slide bg-white h-auto">
                                         <picture>
-                                            <img class="img-fluid d-table mx-auto" src="./assets/images/products/product-5.jpg" alt="Bootstrap 5 Template by Pixel Rocket" data-zoomable>
+                                            <img class="img-fluid d-table mx-auto" src="{{ $product->image }}" alt="Bootstrap 5 Template by Pixel Rocket" data-zoomable>
                                         </picture>
                                     </div>
                                     <div class="swiper-slide bg-white h-auto">
@@ -105,10 +105,10 @@
                                     </div>            <small class="text-muted d-inline-block ms-2 fs-bolder">(1288)</small>
                                 </div>
                             </div>
-                            <h1 class="mb-2 fs-2 fw-bold">Coastline Plus Waterproof Stormbreaker</h1>
+                            <h1 class="mb-2 fs-2 fw-bold">{{ $product->name }}</h1>
                             <div class="d-flex justify-content-start align-items-center">
-                                <p class="lead fw-bolder m-0 fs-3 lh-1 text-danger me-2">$84.99</p>
-                                <s class="lh-1 me-2"><span class="fw-bolder m-0">$94.99</span></s>
+                                <p class="lead fw-bolder m-0 fs-3 lh-1 text-danger me-2">${{ $product->price }}</p>
+                                <s class="lh-1 me-2"><span class="fw-bolder m-0">${{ $product->basic_price }}</span></s>
                                 <p class="lead fw-bolder m-0 fs-6 lh-1 text-success">Save $10.00</p>
                             </div>
                             <!-- /Product Name, Review, Brand, Price-->
@@ -164,11 +164,20 @@
                                     </small>
                                     <div class="form-group">
                                         <select name="selectSize" class="form-control" data-choices>
+
+                                                
                                             <option value="">Please Select Size</option>
-                                            <option value="Extra Small">XS</option>
-                                            <option value="Medium">M</option>
+                                            {{-- @foreach ($products as $products) --}}
+
+                                            @foreach ($products->variants as $variant)
+                                            <option value="{{ $variant->name }}">{{ $variant->name }}</option>
+                                            {{-- <option value="Medium">M</option>
                                             <option value="Large">L</option>
-                                            <option value="Extra Large">XL</option>
+                                            <option value="Extra Large">XL</option> --}}
+
+                                            {{-- @endforeach --}}
+                                            @endforeach
+
                                         </select>
                                     </div>
                                 </div>
@@ -652,59 +661,11 @@
 
 
                         {{-- product loop --}}
-                        @foreach ($product as $product)
                             
                         {{-- {{ $product->name }} --}}
+                       @include('components.product.productsloop')
 
-                        @endforeach
-                          <div class="swiper-slide d-flex h-auto">
-                            <!-- Card Product-->
-                            <div class="card position-relative h-100 card-listing hover-trigger">
-                                <div class="card-header">
-                                    <picture class="position-relative overflow-hidden d-block bg-light">
-                                        <img class="w-100 img-fluid position-relative z-index-10" title="" src="./assets/images/products/product-1.jpg" alt="">
-                                    </picture>
-                                        <picture class="position-absolute z-index-20 start-0 top-0 hover-show bg-light">
-                                            <img class="w-100 img-fluid" title="" src="./assets/images/products/product-1b.jpg" alt="">
-                                        </picture>
-                                    <div class="card-actions">
-                                        <span class="small text-uppercase tracking-wide fw-bolder text-center d-block">Quick Add</span>
-                                        <div class="d-flex justify-content-center align-items-center flex-wrap mt-3">
-                                            <button class="btn btn-outline-dark btn-sm mx-2">S</button>
-                                            <button class="btn btn-outline-dark btn-sm mx-2">M</button>
-                                            <button class="btn btn-outline-dark btn-sm mx-2">L</button>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="card-body px-0 text-center">
-                                    <div class="d-flex justify-content-center align-items-center mx-auto mb-1">
-                                        <!-- Review Stars Small-->
-                            <div class="rating position-relative d-table">
-                                <div class="position-absolute stars" style="width: 90%">
-                                    <i class="ri-star-fill text-dark mr-1"></i>
-                                    <i class="ri-star-fill text-dark mr-1"></i>
-                                    <i class="ri-star-fill text-dark mr-1"></i>
-                                    <i class="ri-star-fill text-dark mr-1"></i>
-                                    <i class="ri-star-fill text-dark mr-1"></i>
-                                </div>
-                                <div class="stars">
-                                    <i class="ri-star-fill mr-1 text-muted opacity-25"></i>
-                                    <i class="ri-star-fill mr-1 text-muted opacity-25"></i>
-                                    <i class="ri-star-fill mr-1 text-muted opacity-25"></i>
-                                    <i class="ri-star-fill mr-1 text-muted opacity-25"></i>
-                                    <i class="ri-star-fill mr-1 text-muted opacity-25"></i>
-                                </div>
-                            </div> <span class="small fw-bolder ms-2 text-muted"> 4.7 (456)</span>
-                                    </div>
-                                    <a class="mb-0 mx-2 mx-md-4 fs-p link-cover text-decoration-none d-block text-center"
-                                        href="./product.html">{{'hi' }}</a>
-                                        <p class="fw-bolder m-0 mt-2">{{ '$product->price' }}</p>
-                                </div>
-                            </div>
-                            <!--/ Card Product-->
-                          </div>
-                      {{-- @endforeach --}}
-                          
+
                         <div class="swiper-slide d-flex h-auto justify-content-center align-items-center">
                           <a href="./category.html" class="d-flex text-decoration-none flex-column justify-content-center align-items-center">
                             <span class="btn btn-dark btn-icon mb-3"><i class="ri-arrow-right-line ri-lg lh-1"></i></span>
