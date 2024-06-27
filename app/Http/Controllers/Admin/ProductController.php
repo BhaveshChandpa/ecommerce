@@ -37,13 +37,13 @@ class ProductController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Product $product)
+    public function show(Product $product, $slug)
     {
         // dd($product);
 
         // $product->load('variants:name,id');
         // $product = Product::select('id', 'name', 'image')->first();
-        $product =  helper::FetchSingleProduct();
+        $product =  helper::FetchSingleProduct($slug);
         $products = Product::with('variants')->get();
         // dd($products->varinats);
 

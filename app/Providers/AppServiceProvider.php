@@ -5,6 +5,7 @@ namespace App\Providers;
 use Illuminate\Support\ServiceProvider;
 use App\Models\Category;
 use Illuminate\Support\Facades\View;
+use App\Models\Product;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -30,5 +31,10 @@ class AppServiceProvider extends ServiceProvider
                             ->get();
             $view->with('categories', $categories);
         });
+
+        // View::composer('*', function ($view) {
+        //     $products = Product::all();
+        // });
+
     }
 }

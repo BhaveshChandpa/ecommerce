@@ -20,9 +20,11 @@ use App\Models\Product;
 
 class helper{
 
-    public static function FetchSingleProduct(){
+    public static function FetchSingleProduct($slug){
 
-        return Product::select('id', 'name', 'image', 'price', 'basic_price')->first();
+        return Product::select('id', 'name', 'image', 'price', 'basic_price')
+                        ->where('slug', $slug)
+                        ->findOrFail();
 
 
     }

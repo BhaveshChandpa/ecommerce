@@ -609,8 +609,15 @@
 
         </section>
 
+        @php
+            $products = \App\Models\Product::all();
+
+        @endphp
+
+        @include('components.product.productsloop')
         <!-- Related Products-->
         <div class="container my-8">
+
             <h3 class="fs-4 fw-bold mb-5 text-center">You May Also Like</h3>
                 <!-- Swiper Latest -->
                 <div class="swiper-container overflow-visible"
@@ -1032,10 +1039,13 @@
                   <div class="swiper-btn swiper-disabled-hide swiper-next swiper-btn-side swiper-btn-side-right btn-icon bg-dark text-white me-n4 shadow-lg mt-n5"><i class="ri-arrow-right-s-line ri-lg"></i></div>
                 
                   <!-- Add Scrollbar -->
-                  <div class="swiper-scrollbar"></div>
+                  <div class="swiper-scrollbar">
+
+                  </div>
                 
                 </div>
-                <!-- / Swiper Latest-->        </div>
+                <!-- / Swiper Latest-->       
+        </div>
         <!--/ Related Products-->
 
 
