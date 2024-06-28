@@ -1,4 +1,10 @@
-@foreach ($products as $product )
+
+@php
+    $product = \App\Models\Product::all();
+@endphp
+
+@foreach ($product as $product)
+    
 <div class="swiper-slide d-flex h-auto">
 
   <!-- Card Product-->
@@ -40,11 +46,12 @@
   </div> <span class="small fw-bolder ms-2 text-muted"> 4.7 (456)</span>
           </div>
           <a class="mb-0 mx-2 mx-md-4 fs-p link-cover text-decoration-none d-block text-center"
-              href="./product.html">{{ $product->name }}</a>
+              href="{{ route('product.show' , $product->slug )}}">{{ $product->name }}</a>
               <p class="fw-bolder m-0 mt-2">{{ $product->price }}</p>
       </div>
   </div>
   <!--/ Card Product-->
 
 </div>
+
 @endforeach
