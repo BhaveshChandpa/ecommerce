@@ -24,8 +24,6 @@ return new class extends Migration
             $table->string('image');
             $table->foreignIdFor(Tax::class);
 
-
-
             $table->timestamps();
         });
     }

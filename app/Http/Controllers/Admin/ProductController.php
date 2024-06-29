@@ -3,9 +3,9 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Category;
 use App\Models\Product;
 use Illuminate\Http\Request;
-use App\Helpers\helper;
 
 class ProductController extends Controller
 {
@@ -15,6 +15,7 @@ class ProductController extends Controller
     public function index()
     {
         $products = Product::all();
+
         return view('product.index', ['products' => $products]);
     }
 
@@ -41,17 +42,19 @@ class ProductController extends Controller
     {
         // dd($product);
 
-    
         // $product->load('variants:name,id');
         // $product = Product::select('id', 'name', 'image')->first();
-        // $product =  helper::FetchSingleProduct();
+        // $product =  UiHelper::FetchSingleProduct();
+        // $category = Category::with('products')->get();
         $product = Product::where('slug', $slug)->with('variants')->firstOrFail();
-        $products = Product::with('variants')->get();
+        $products = Product::with(['variants', 'category'])->get();
+
+        $categoryName = $product->category->name;
         // dd($products->varinats);
 
         // dd($product);
 
-        return view('product.show', ['products' => $products, 'product' => $product]);
+        return view('product.show', ['products' => $products, 'product' => $product, 'categoryName' => $categoryName]);
     }
 
     /**

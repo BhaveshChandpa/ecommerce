@@ -2,10 +2,9 @@
 
 namespace Database\Factories;
 
-use App\Models\Category;
+use App\Models\Tax;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Str;
-use App\Models\Tax;
 
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Product>
@@ -21,6 +20,7 @@ class ProductFactory extends Factory
     {
 
         $name = $this->faker->name;
+
         return [
 
             'name' => $name,
@@ -29,7 +29,7 @@ class ProductFactory extends Factory
             'basic_price' => $this->faker->randomFloat(2, 10, 100),
             'image' => $this->faker->imageUrl(),
             // 'image' => $this->faker->image('public/storage/',640,480, null, false),
-            'tax_id' => Tax::inRandomOrder()->first()
+            'tax_id' => Tax::inRandomOrder()->first(),
 
         ];
     }
