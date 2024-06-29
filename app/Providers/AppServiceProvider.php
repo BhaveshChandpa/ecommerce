@@ -2,20 +2,18 @@
 
 namespace App\Providers;
 
-use Illuminate\Support\ServiceProvider;
 use App\Models\Category;
 use Illuminate\Support\Facades\View;
+use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
 {
     /**
      * Register any application services.
      */
-
- 
     public function register(): void
     {
-   
+
     }
 
     /**
@@ -25,9 +23,9 @@ class AppServiceProvider extends ServiceProvider
     {
         View::composer('*', function ($view) {
             $categories = Category::whereNull('parent_id')
-                            ->withWhereHas('subcategories')
-                            ->select('id', 'parent_id', 'name')
-                            ->get();
+                ->withWhereHas('subcategories')
+                ->select('id', 'parent_id', 'name')
+                ->get();
             $view->with('categories', $categories);
         });
     }

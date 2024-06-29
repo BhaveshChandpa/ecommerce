@@ -13,16 +13,15 @@ class Category extends Model
 
     protected $fillable = ['parent_id', 'name', 'status'];
 
-
     public function scopeIsSubcategories($query)
     {
         return $query->whereNotNull('parent_id');
     }
+
     public function category(): BelongsTo
     {
         return $this->belongsTo(Category::class, 'parent_id');
     }
-
 
     public function subcategories(): HasMany
     {

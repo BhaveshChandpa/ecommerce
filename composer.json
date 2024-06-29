@@ -27,7 +27,7 @@
             "Database\\Seeders\\": "database/seeders/",
             
             "files": [
-                        "app/Helpers/ProductHelper.php"
+                        "app/Helpers/UiHelper.php"
     ]
         }
     },

@@ -22,17 +22,12 @@ Route::redirect('/', '/home');
 //     return view('welcome');
 // });
 
-
 Route::get('/home', [HomeController::class, 'home'])->name('home');
 Route::get('/category', [CategoryController::class, 'index'])->name('category.index');
-
-
-
 
 // Product Routes
 Route::resource('product', ProductController::class)->parameters(
     ['product' => 'product:slug']
-    )->only(['index','show']);
-
+)->only(['index', 'show']);
 
 // Route::get('products', [AdminController::class, 'products']);

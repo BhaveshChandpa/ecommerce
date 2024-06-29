@@ -17,8 +17,8 @@ class TaxFactory extends Factory
     public function definition(): array
     {
         return [
-            'name'=> $this->faker->word(),
-            'percentage' => $this->faker->numberBetween(5, 20), 
+            'name' => $this->faker->word(),
+            'percentage' => $this->faker->numberBetween(5, 20),
         ];
     }
 }

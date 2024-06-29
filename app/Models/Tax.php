@@ -9,11 +9,10 @@ class Tax extends Model
 {
     use HasFactory;
 
-    protected $fillable = [ 
+    protected $fillable = [
         'name',
         'percentage',
     ];
-
 
     public function product()
     {

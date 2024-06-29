@@ -9,7 +9,7 @@ class Product extends Model
 {
     use HasFactory;
 
-    protected  $fillable = [
+    protected $fillable = [
 
         'name',
         'slug',
@@ -18,7 +18,7 @@ class Product extends Model
         'price',
         'basic_price',
         'image',
-        'tax_id'
+        'tax_id',
     ];
 
     public function category()
@@ -30,7 +30,6 @@ class Product extends Model
     {
         return $this->belongsTo(Tax::class);
     }
-
 
     public function variants()
     {
