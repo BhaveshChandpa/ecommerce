@@ -52,28 +52,27 @@
                     Colour : <span class="selected-option fw-bold">Crimson Blue</span>
                 </small>
                 <div class="d-flex justify-content-start">
-                    <div
-                        class="form-group d-inline-block mr-1 mb-1 form-check-solid-bg-checkmark form-check-custom">
-                        <input type="radio" class="form-check-color-input" id="option-colour-1"
-                            name="option-colour" value="Dark Black">
+                    <div class="form-group d-inline-block mr-1 mb-1 form-check-solid-bg-checkmark form-check-custom">
+                        <input type="radio" class="form-check-color-input" id="option-colour-1" name="option-colour"
+                            value="Dark Black">
                         <label class="form-check-label" for="option-colour-1"></label>
                     </div>
                     <div
                         class="form-group d-inline-block mr-1 mb-1 form-check-solid-bg-checkmark form-check-custom form-check-warning">
-                        <input type="radio" class="form-check-color-input" id="option-colour-2"
-                            name="option-colour" value="Sun Yellow">
+                        <input type="radio" class="form-check-color-input" id="option-colour-2" name="option-colour"
+                            value="Sun Yellow">
                         <label class="form-check-label" for="option-colour-2"></label>
                     </div>
                     <div
                         class="form-group d-inline-block mr-1 mb-1 form-check-solid-bg-checkmark form-check-custom form-check-info">
-                        <input type="radio" class="form-check-color-input" id="option-colour-3"
-                            name="option-colour" value="Crimson Blue" checked>
+                        <input type="radio" class="form-check-color-input" id="option-colour-3" name="option-colour"
+                            value="Crimson Blue" checked>
                         <label class="form-check-label" for="option-colour-3"></label>
                     </div>
                     <div
                         class="form-group d-inline-block mr-1 mb-1 form-check-solid-bg-checkmark form-check-custom form-check-danger">
-                        <input type="radio" class="form-check-color-input" id="option-colour-4"
-                            name="option-colour" value="Cherry Red">
+                        <input type="radio" class="form-check-color-input" id="option-colour-4" name="option-colour"
+                            value="Cherry Red">
                         <label class="form-check-label" for="option-colour-4"></label>
                     </div>
                 </div>
@@ -83,13 +82,30 @@
                     Size (UK) : <span class="selected-option fw-bold"></span>
                 </small>
                 <div class="form-group">
-                    <select name="selectSize" class="form-control" data-choices>
+                    <select name="size" class="form-control" data-choices>
 
 
-                        <option value="">Please Select Size</option>
+                        {{-- <option value="">Please Select Size</option> --}}
+
+                            @if ($size)
+
+                            <option value="{{ $size }}">{{ $size }}</option>
+
+                            @else
+                            <option value="">Please Select Size</option>
+
                             @foreach ($product->variants as $variant)
-                                <option value="{{ $variant->name }}">{{ $variant->name }}</option> 
-                        @endforeach
+                                <option value="{{ $variant->name }}">{{ $variant->name }}</option>
+                            @endforeach
+
+                        @endif
+
+                        
+                     
+
+
+
+
 
                     </select>
                 </div>
@@ -108,8 +124,7 @@
         <div class="my-4">
             <div class="d-flex justify-content-start align-items-center">
                 <p class="fw-bolder lh-1 mb-0 me-3">Share</p>
-                <ul
-                    class="list-unstyled p-0 m-0 d-flex justify-content-start lh-1 align-items-center mt-1">
+                <ul class="list-unstyled p-0 m-0 d-flex justify-content-start lh-1 align-items-center mt-1">
                     <li class="me-2"><a class="text-decoration-none" href="#" role="button"><i
                                 class="ri-facebook-box-fill"></i></a></li>
                     <li class="me-2"><a class="text-decoration-none" href="#" role="button"><i

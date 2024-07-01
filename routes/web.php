@@ -28,6 +28,11 @@ Route::get('/category', [CategoryController::class, 'index'])->name('category.in
 // Product Routes
 Route::resource('product', ProductController::class)->parameters(
     ['product' => 'product:slug']
-)->only(['index', 'show']);
+)->only(['index']);
+
+Route::get('product/{slug}/{size?}', [ProductController::class, 'show'])->name('product.show');
+
+// Route::get('product')
+// Route::get('product/{product:slug}/{size}', [ProductController::class, 'showWithSize'])->name('product.showWithSize');
 
 // Route::get('products', [AdminController::class, 'products']);

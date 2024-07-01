@@ -138,8 +138,14 @@
                             <span class="small text-uppercase fw-bolder d-block text-center tracking-wide">Quick Add</span>
                             <div class="d-flex justify-content-center align-items-center mt-3 flex-wrap">
                                 @foreach ($product->variants as $variant)
-                                    <button class="btn btn-outline-dark btn-sm mx-2">{{ $variant->name }}</button>
-                                @endforeach
+                                    <button class="btn btn-outline-dark btn-sm mx-2" onclick="window.location.href='{{ route('product.show', ['slug' => $product->slug, 'size' => $variant->size]) }}';" >{{ $variant->name }}</button>
+                                    
+                                    {{-- <a class="btn btn-outline-dark btn-sm mx-2"
+                                    href="{{ route('product.show', ['slug' => $product->slug, 'size' => $variant->size]) }}">
+                                    {{ $variant->name }}
+                                 </a> --}}
+                                 
+                                    @endforeach
 
                             </div>
                         </div>
@@ -170,8 +176,10 @@
 
                         </div>
 
-                        <a class="mx-md-4 fs-p link-cover text-decoration-none d-block mx-2 mb-0 text-center"
-                            href="{{ route('product.show', $product->slug) }}">{{ $product->name }}</a>
+                        {{-- <a class="mx-md-4 fs-p link-cover text-decoration-none d-block mx-2 mb-0 text-center"
+                            href="{{ route('product.show', $product->slug) }}">{{ $product->name }}</a> --}}
+                   <a class="mx-md-4 fs-p link-cover text-decoration-none d-block mx-2 mb-0 text-center" href="">{{ $product->name }}</a>
+
                         <p class="fw-bolder m-0 mt-2">${{ $product->price }}</p>
 
                     </div>
