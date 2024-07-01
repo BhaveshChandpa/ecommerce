@@ -83,13 +83,26 @@
                     Size (UK) : <span class="selected-option fw-bold"></span>
                 </small>
                 <div class="form-group">
-                    <select name="selectSize" class="form-control" data-choices>
+                    <select name="size" class="form-control" data-choices>
 
 
-                        <option value="">Please Select Size</option>
+                             
+                            @if($size)
+                                 
+                            
+                            <option value="{{ $size }}">{{ $size }}</option>  
+
+                            @else
+                            <option value="">Please Select Size</option>
+
                             @foreach ($product->variants as $variant)
-                                <option value="{{ $variant->name }}">{{ $variant->name }}</option> 
-                        @endforeach
+
+                             <option value="{{ $variant->name }}">{{ $variant->name }}</option>  
+                                
+                             @endforeach
+                            @endif
+
+                       
 
                     </select>
                 </div>

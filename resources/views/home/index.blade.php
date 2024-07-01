@@ -137,9 +137,16 @@
                         <div class="card-actions">
                             <span class="small text-uppercase fw-bolder d-block text-center tracking-wide">Quick Add</span>
                             <div class="d-flex justify-content-center align-items-center mt-3 flex-wrap">
-                                @foreach ($product->variants as $variant)
-                                    <button class="btn btn-outline-dark btn-sm mx-2">{{ $variant->name }}</button>
+
+                              @foreach ($product->variants as $variant)
+                                    {{-- <button type="submit" name="size" value="{{ $variant->name }}" class="btn btn-outline-dark btn-sm mx-2">{{ $variant->name }}</button> --}}
+                                {{-- <a href="{{ route('product.show', ['product' => $product->slug]) }}?size={{ $variant->name }}"  class="btn btn-outline-dark btn-sm mx-2">{{ $variant->name }}</a> --}}
+                                
+                                <a href="{{ route('product.show', ['product' => $product->slug]) }}?size={{ $variant->name }}" >
+                                    <button type="submit"  name='size' class="btn btn-outline-dark btn-sm mx-2">{{ $variant->name }}</button>
+                                </a>
                                 @endforeach
+
 
                             </div>
                         </div>

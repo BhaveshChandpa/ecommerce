@@ -19,9 +19,14 @@
           <div class="card-actions">
               <span class="small text-uppercase tracking-wide fw-bolder text-center d-block">Quick Add</span>
               <div class="d-flex justify-content-center align-items-center flex-wrap mt-3">
-                  <button class="btn btn-outline-dark btn-sm mx-2">S</button>
-                  <button class="btn btn-outline-dark btn-sm mx-2">M</button>
-                  <button class="btn btn-outline-dark btn-sm mx-2">L</button>
+
+                {{-- <form action="{{ route('')}}" method="post"> --}}
+                    {{-- @csrf --}}
+                  <button type="submit" class="btn btn-outline-dark btn-sm mx-2">S</button>
+                  <button type="submit" class="btn btn-outline-dark btn-sm mx-2">M</button>
+                  <button type="submit" class="btn btn-outline-dark btn-sm mx-2">L</button>
+
+                {{-- </form> --}}
               </div>
           </div>
       </div>
