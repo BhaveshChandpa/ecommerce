@@ -86,23 +86,17 @@
                     <select name="size" class="form-control" data-choices>
 
 
-                             
-                            @if($size)
-                                 
-                            
-                            <option value="{{ $size }}">{{ $size }}</option>  
 
-                            @else
+
                             <option value="">Please Select Size</option>
 
                             @foreach ($product->variants as $variant)
 
-                             <option value="{{ $variant->name }}">{{ $variant->name }}</option>  
-                                
-                             @endforeach
-                            @endif
+                             <option value="{{ $variant->name }}">{{ $variant->name }}</option>
 
-                       
+                             @endforeach
+
+
 
                     </select>
                 </div>

@@ -25,13 +25,14 @@
     Route::get('/home', [HomeController::class, 'home'])->name('home');
     Route::get('/category', [CategoryController::class, 'index'])->name('category.index');
 
+    Route::get('product/{slug?}/{variant}', [ProductController::class, 'show'])->name('product.show')->where('size', '[A-Za-z]+');;
+
     // Product Routes
     Route::resource('product', ProductController::class)->parameters(
         ['product' => 'product:slug']
-    )->only(['index', 'show']);
+    )->only(['index']);
 
 
-    // Route::get('product/{product:slug}/{size?}', [ProductController::class, 'show'])->name('product.show')->where('size', '[A-Za-z]+');;
 
 
     // Route::get('products', [AdminController::class, 'products']);

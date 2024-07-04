@@ -38,33 +38,31 @@ class ProductController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show($slug, Request $request)
+    public function show($slug, $variant)
     {
-        $product = Product::where('slug', $slug)->with('variants')->firstOrFail();
-        $products = Product::with(['variants', 'category'])->get();
+
+        $product = Product::where('slug', $slug)->with('variants', 'category')->firstOrFail();
+        // $products = Product::with(['variants', 'category'])->get();
 
         $categoryName = $product->category->name;
-        $size = $request->query('size', null);
-     
+
         // $selectSize = $request->query('size', null);
 
         // $size = $product->variants->name;
 
+        // dd($request->url());
+
         return view('product.show', [
-            'products' => $products,
+            // 'products' => $products,
             'product' => $product,
             'categoryName' => $categoryName,
-            'size' => $size
+            // 'size' => $size
         ]);
 
     }
 
 
-    // public function selectSize(Request $request, Product $product){
 
-    //     $selectSize = $request->input('size');
-    //     return redirect()->route('product.show', ['product' => $product->slug, 'size' => $selectSize]);
-    // }
 
     /**
      * Show the form for editing the specified resource.

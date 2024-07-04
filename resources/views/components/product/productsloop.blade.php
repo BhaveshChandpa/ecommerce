@@ -4,7 +4,7 @@
 @endphp
 
 @foreach ($product as $product)
-    
+
 <div class="swiper-slide d-flex h-auto">
 
   <!-- Card Product-->
@@ -20,13 +20,17 @@
               <span class="small text-uppercase tracking-wide fw-bolder text-center d-block">Quick Add</span>
               <div class="d-flex justify-content-center align-items-center flex-wrap mt-3">
 
-                {{-- <form action="{{ route('')}}" method="post"> --}}
-                    {{-- @csrf --}}
-                  <button type="submit" class="btn btn-outline-dark btn-sm mx-2">S</button>
-                  <button type="submit" class="btn btn-outline-dark btn-sm mx-2">M</button>
-                  <button type="submit" class="btn btn-outline-dark btn-sm mx-2">L</button>
+                @foreach ($product->variants as $variant)
+                {{-- <button type="submit" name="size" value="{{ $variant->name }}" class="btn btn-outline-dark btn-sm mx-2">{{ $variant->name }}</button> --}}
+            {{-- <a href="{{ route('product.show', ['product' => $product->slug]) }}?size={{ $variant->name }}"  class="btn btn-outline-dark btn-sm mx-2">{{ $variant->name }}</a> --}}
 
-                {{-- </form> --}}
+            <a href="{{ route('product.show', ['product' => $product->slug, 'variant' => $variant->name] )}}">
+
+                <button type="button"  class="btn btn-outline-dark btn-sm mx-2">{{ $variant->name }}</button>
+            </a>
+
+
+            @endforeach
               </div>
           </div>
       </div>
@@ -50,9 +54,16 @@
       </div>
   </div> <span class="small fw-bolder ms-2 text-muted"> 4.7 (456)</span>
           </div>
-          <a class="mb-0 mx-2 mx-md-4 fs-p link-cover text-decoration-none d-block text-center"
+          {{-- <a class="mb-0 mx-2 mx-md-4 fs-p link-cover text-decoration-none d-block text-center"
               href="{{ route('product.show' , $product->slug )}}">{{ $product->name }}</a>
-              <p class="fw-bolder m-0 mt-2">{{ $product->price }}</p>
+              <p class="fw-bolder m-0 mt-2">{{ $product->price }}</p> --}}
+              {{-- @foreach ($product->variants as $variant)
+
+              <a href="{{ route('product.show', ['product' => $product->slug, 'size' => $variant->name ]) }}" >
+                <button type="button"  class="btn btn-outline-dark btn-sm mx-2">{{ $size }}</button>
+            </a>
+
+            @endforeach --}}
       </div>
   </div>
   <!--/ Card Product-->

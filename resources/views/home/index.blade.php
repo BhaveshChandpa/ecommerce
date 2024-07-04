@@ -92,11 +92,11 @@
                       "el": ".swiper-scrollbar",
                       "hide": false,
                       "draggable": true
-                    },      
+                    },
                     "navigation": {
                       "nextEl": ".swiper-next",
                       "prevEl": ".swiper-prev"
-                    },  
+                    },
                     "breakpoints": {
                       "576": {
                         "slidesPerView": 1
@@ -109,7 +109,7 @@
                       },
                       "1200": {
                         "slidesPerView": 4
-                      }            
+                      }
                     }
                   }'>
 
@@ -141,10 +141,12 @@
                               @foreach ($product->variants as $variant)
                                     {{-- <button type="submit" name="size" value="{{ $variant->name }}" class="btn btn-outline-dark btn-sm mx-2">{{ $variant->name }}</button> --}}
                                 {{-- <a href="{{ route('product.show', ['product' => $product->slug]) }}?size={{ $variant->name }}"  class="btn btn-outline-dark btn-sm mx-2">{{ $variant->name }}</a> --}}
-                                
-                                <a href="{{ route('product.show', ['product' => $product->slug]) }}?size={{ $variant->name }}" >
-                                    <button type="submit"  name='size' class="btn btn-outline-dark btn-sm mx-2">{{ $variant->name }}</button>
+
+                                <a href="{{ route('product.show', ['slug' => $product->slug, 'variant' => $variant->name]) }}">
+                                    <button type="button" class="btn btn-outline-dark btn-sm mx-2">{{ $variant->name }}</button>
                                 </a>
+
+
                                 @endforeach
 
 
@@ -177,9 +179,9 @@
 
                         </div>
 
-                        <a class="mx-md-4 fs-p link-cover text-decoration-none d-block mx-2 mb-0 text-center"
+                        {{-- <a class="mx-md-4 fs-p link-cover text-decoration-none d-block mx-2 mb-0 text-center"
                             href="{{ route('product.show', $product->slug) }}">{{ $product->name }}</a>
-                        <p class="fw-bolder m-0 mt-2">${{ $product->price }}</p>
+                        <p class="fw-bolder m-0 mt-2">${{ $product->price }}</p> --}}
 
                     </div>
                 </div>
