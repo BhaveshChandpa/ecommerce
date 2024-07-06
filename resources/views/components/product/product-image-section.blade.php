@@ -1,5 +1,4 @@
 <div class="row g-5">
-
     <!-- Images Section-->
     <div class="col-12 col-lg-7">
         <div class="row g-1">

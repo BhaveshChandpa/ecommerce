@@ -17,8 +17,8 @@ class CategoryController extends Controller
         $category = Category::with('category', 'subcategories')->first();
 
         // $product = Product::all();
-        $product = Product::with('variants')->get();
+        // $product = Product::with('variants')->get();
 
-        return view('category.index', ['category' => $category, 'product' => $product, 'categories' => $categories]);
+        return view('category.index', ['category' => $category,  'categories' => $categories]);
     }
 }

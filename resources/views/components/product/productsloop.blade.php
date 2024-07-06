@@ -1,9 +1,19 @@
 
 @php
-    $product = \App\Models\Product::all();
+
+    use Illuminate\Http\Request;
+    
+
+
+    $slug = (request()->route()->parameters['slug']);
+    // dd($slug);
+
+    $products = \App\Models\Product::whereNot('slug', $slug )->with('variants')->get();
+
 @endphp
 
-@foreach ($product as $product)
+
+@foreach ($products as $product)
 
 <div class="swiper-slide d-flex h-auto">
 
@@ -19,18 +29,15 @@
           <div class="card-actions">
               <span class="small text-uppercase tracking-wide fw-bolder text-center d-block">Quick Add</span>
               <div class="d-flex justify-content-center align-items-center flex-wrap mt-3">
+                    @foreach ($product->variants as $variant)
+                    
+                <a href="{{ route('product.show', ['product' => $product->slug, 'variant' => $variant->name] )}}">
 
-                @foreach ($product->variants as $variant)
-                {{-- <button type="submit" name="size" value="{{ $variant->name }}" class="btn btn-outline-dark btn-sm mx-2">{{ $variant->name }}</button> --}}
-            {{-- <a href="{{ route('product.show', ['product' => $product->slug]) }}?size={{ $variant->name }}"  class="btn btn-outline-dark btn-sm mx-2">{{ $variant->name }}</a> --}}
-
-            <a href="{{ route('product.show', ['product' => $product->slug, 'variant' => $variant->name] )}}">
-
-                <button type="button"  class="btn btn-outline-dark btn-sm mx-2">{{ $variant->name }}</button>
-            </a>
+                    <button type="button"  class="btn btn-outline-dark btn-sm mx-2">{{ $variant->name }}</button>
+                </a>
 
 
-            @endforeach
+                @endforeach
               </div>
           </div>
       </div>
@@ -57,13 +64,14 @@
           {{-- <a class="mb-0 mx-2 mx-md-4 fs-p link-cover text-decoration-none d-block text-center"
               href="{{ route('product.show' , $product->slug )}}">{{ $product->name }}</a>
               <p class="fw-bolder m-0 mt-2">{{ $product->price }}</p> --}}
-              {{-- @foreach ($product->variants as $variant)
 
-              <a href="{{ route('product.show', ['product' => $product->slug, 'size' => $variant->name ]) }}" >
-                <button type="button"  class="btn btn-outline-dark btn-sm mx-2">{{ $size }}</button>
-            </a>
+                {{-- @foreach ($product->variants as $variant)
 
-            @endforeach --}}
+                <a href="{{ route('product.show', ['product' => $product->slug, 'size' => $variant->name ]) }}" >
+                    <button type="button"  class="btn btn-outline-dark btn-sm mx-2">{{ $size }}</button>
+                </a>
+
+                @endforeach --}}
       </div>
   </div>
   <!--/ Card Product-->

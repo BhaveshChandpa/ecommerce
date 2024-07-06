@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use App\Models\Category;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
 
@@ -27,6 +28,10 @@ class AppServiceProvider extends ServiceProvider
                 ->select('id', 'parent_id', 'name')
                 ->get();
             $view->with('categories', $categories);
+
         });
+
+        // Model::preventLazyLoading(! $this->app->isProduction()); 
+    
     }
 }
