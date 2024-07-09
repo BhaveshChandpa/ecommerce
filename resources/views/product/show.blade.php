@@ -29,7 +29,7 @@
                 </ol>
             </nav> <!-- /Breadcrumbs-->
 
-            @include('components.product.product-image-section')
+            @include('compo.product.product-image-section')
 
         </section>
         <!-- / Product Top-->
@@ -69,24 +69,24 @@
 
                         <!-- Tab Details Content-->
                        
-                        @include('components.product.product-detail')
+                        @include('compo.product.product-detail')
                         <!-- Tab Details Content-->
 
                         <!-- Review Tab Content-->
                        
-                        @include('components.product.product-review')
+                        @include('compo.product.product-review')
 
                         <!-- / Review Tab Content-->
 
                         <!-- Delivery Tab Content-->
                        
-                        @include('components.product.product-delivery')
+                        @include('compo.product.product-delivery')
 
                         <!-- / Delivery Tab Content-->
 
                         <!-- Returns Tab Content-->
                        
-                        @include('components.product.product-return')
+                        @include('compo.product.product-return')
 
                         <!-- / Returns Tab Content-->
 
@@ -99,7 +99,7 @@
         </section>
 
         <!-- Related Products-->
-       @include('components.product.related-product')
+       @include('compo.product.related-product')
         <!--/ Related Products-->
 
 
@@ -125,7 +125,7 @@
     <!-- / Product Top-->
 
 
-    @include('components.search')
+    @include('compo.search')
 
 
     <!-- Theme JS -->

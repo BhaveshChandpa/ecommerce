@@ -8,7 +8,7 @@
     <!-- Main Section-->
     <section class="mt-0">
         <!-- Page Content Goes Here -->
-        @include('components.banner')
+        @include('compo.banner')
         <!--/ Hero Section-->
 
         <!-- Featured Brands-->
@@ -842,7 +842,7 @@
     </div>
     <!-- Search Overlay-->
 
-    @include('components.search')
+    @include('compo.search')
     <!-- Theme JS -->
     <!-- Vendor JS -->
 

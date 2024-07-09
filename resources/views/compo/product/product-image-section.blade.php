@@ -42,7 +42,7 @@
 
     <!-- Product Info Section-->
 
-   @include('components.product.product-info')
+   @include('compo.product.product-info')
 
     <!-- / Product Info Section-->
 </div>
