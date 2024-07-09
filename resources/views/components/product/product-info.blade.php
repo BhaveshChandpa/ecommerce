@@ -97,10 +97,7 @@
         <!-- /Product Options-->
 
         <!-- Add To Cart-->
-        <div class="d-flex justify-content-between mt-3">
-            <button class="btn btn-dark btn-dark-chunky flex-grow-1 me-2 text-white">Add To Cart</button>
-            <button class="btn btn-orange btn-orange-chunky"><i class="ri-heart-line"></i></button>
-        </div>
+       @include('components.cart.addtocart');
         <!-- /Add To Cart-->
 
         <!-- Socials-->
