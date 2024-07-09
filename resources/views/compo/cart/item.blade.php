@@ -24,16 +24,16 @@
 
         <!-- Coupon Code-->
 
-        @include('components.cart.coupon')
+        @include('compo.cart.coupon')
         <!-- / Coupon Code-->
 
         <!-- Checkout Button-->
 
-        @include('components.cart.checkout')
+        @include('compo.cart.checkout')
         <!-- Checkout Button-->
     </div>
 
     <!-- Payment Icons-->
-    @include('components.cart.payment')
+    @include('compo.cart.payment')
     <!-- / Payment Icons-->
 </div>
