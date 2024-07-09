@@ -1,9 +1,9 @@
-@extends('layouts.app')
+@extends('layout.app')
 
 @section('content')
     <!-- Navbar -->
     <!-- Navbar -->
-    @include('layouts.navbar')
+    @include('layout.navbar')
 
     <!-- / Navbar--> <!-- / Navbar-->
 
@@ -1166,7 +1166,7 @@
 
     <!-- Footer -->
     <!-- Footer-->
-    @include('layouts.footer')
+    @include('layout.footer')
 
     <!-- / Footer-->
     <!-- Offcanvas Imports-->
@@ -1633,5 +1633,5 @@
     <!-- Theme JS -->
     <!-- Vendor JS -->
 
-    @include('layouts.script')
+    @include('layout.script')
 @endsection
