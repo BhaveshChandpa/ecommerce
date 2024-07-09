@@ -3,7 +3,7 @@
 
         <!-- Product Name, Review, Brand, Price-->
         <div class="d-flex justify-content-between align-items-center mb-2">
-            <p class="small fw-bolder text-uppercase tracking-wider text-muted mb-0 lh-1">{{ $categoryName }}</p>
+            <p class="small fw-bolder text-uppercase tracking-wider text-muted mb-0 lh-1">{{ '$categoryName' }}</p>
             <div class="d-flex justify-content-start align-items-center">
                 <!-- Review Stars Small-->
                 <div class="rating position-relative d-table">
@@ -85,19 +85,11 @@
                 <div class="form-group">
                     <select name="size" class="form-control" data-choices>
 
+                            @foreach ($product->variants as $product_variant)
 
-
-
-                            <option value="">Please Select Size</option>
-
-                            @foreach ($product->variants as $variant)
-
-                             <option value="{{ $variant->name }}">{{ $variant->name }}</option>
+                             <option {{ strtolower($variant)==strtolower($product_variant->name) ? 'selected' : '--' }} value="{{ $product_variant->name }}">{{ $product_variant->name }}</option>
 
                              @endforeach
-
-
-
                     </select>
                 </div>
             </div>
@@ -105,10 +97,7 @@
         <!-- /Product Options-->
 
         <!-- Add To Cart-->
-        <div class="d-flex justify-content-between mt-3">
-            <button class="btn btn-dark btn-dark-chunky flex-grow-1 me-2 text-white">Add To Cart</button>
-            <button class="btn btn-orange btn-orange-chunky"><i class="ri-heart-line"></i></button>
-        </div>
+       @include('components.cart.addtocart');
         <!-- /Add To Cart-->
 
         <!-- Socials-->

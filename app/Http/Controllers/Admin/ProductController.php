@@ -40,23 +40,26 @@ class ProductController extends Controller
      */
     public function show($slug, $variant)
     {
+        // using wherehas
+        // $product = Product::where('slug', $slug)->whereHas("variants", function($v) use ($variant){
+        //     $v->where('name', $variant);
+        // })
+        // ->with('variants', 'category')->firstOrFail();
 
-        $product = Product::where('slug', $slug)->with('variants', 'category')->firstOrFail();
+
+        $product = Product::where('slug', $slug)->whereRelation("variants", 'name', $variant)
+                    ->with(['variants', 'category'])->firstOrFail();
+        // dd($product);
         // $products = Product::with(['variants', 'category'])->get();
 
-        $categoryName = $product->category->name;
+        // $categoryName = $product->category->name;   
 
-        // $selectSize = $request->query('size', null);
-
-        // $size = $product->variants->name;
-
-        // dd($request->url());
 
         return view('product.show', [
             // 'products' => $products,
             'product' => $product,
-            'categoryName' => $categoryName,
-            // 'size' => $size
+            // 'categoryName' => $categoryName,
+            'variant' => $variant
         ]);
 
     }

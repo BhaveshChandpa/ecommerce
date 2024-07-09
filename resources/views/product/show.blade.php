@@ -36,6 +36,7 @@
 
         <section>
 
+
             <!-- Product Tabs-->
             <div class="mt-7 pt-5 border-top">
                 <div class="container">
