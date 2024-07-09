@@ -1156,7 +1156,7 @@
             </div>
             <!-- / Swiper Latest-->
         </div> --}}
-        @include('components.product.related-product')
+        @include('compo.product.related-product')
         <!--/ Related Products-->
 
 
@@ -1628,7 +1628,7 @@
     </div>
     <!-- Search Overlay-->
   
-    @include('components.search')
+    @include('compo.search')
 
     <!-- Theme JS -->
     <!-- Vendor JS -->

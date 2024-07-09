@@ -72,7 +72,7 @@
             </div>
             <!-- /Cart Items -->
 
-          @include('components.cart.item')
+          @include('compo.cart.item')
 
             <!-- Cart Summary -->
 
@@ -546,7 +546,7 @@
     </div>
     <!-- Search Overlay-->
 
-    @include('components.search')
+    @include('compo.search')
 
     <!-- Theme JS -->
     <!-- Vendor JS -->

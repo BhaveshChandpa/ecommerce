@@ -38,7 +38,7 @@
             {{-- product loop --}}
 
             {{-- {{ $product->name }} --}}
-            @include('components.product.productsloop')
+            @include('compo.product.productsloop')
 
 
             <div class="swiper-slide d-flex h-auto justify-content-center align-items-center">
