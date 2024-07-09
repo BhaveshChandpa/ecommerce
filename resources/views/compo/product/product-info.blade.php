@@ -97,7 +97,7 @@
         <!-- /Product Options-->
 
         <!-- Add To Cart-->
-       @include('components.cart.addtocart');
+       @include('compo.cart.addtocart');
         <!-- /Add To Cart-->
 
         <!-- Socials-->

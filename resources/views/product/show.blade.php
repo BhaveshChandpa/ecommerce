@@ -1,8 +1,8 @@
-@extends('layouts.app')
+@extends('layout.app')
 
 @section('content')
     <!-- Navbar -->
-    @include('layouts.navbar')
+    @include('layout.navbar')
     <!-- / Navbar-->
 
 
@@ -113,7 +113,7 @@
     <!-- Footer -->
     <!-- Footer-->
 
-    @include('layouts.footer')
+    @include('layout.footer')
 
     <!-- / Footer--> <!-- / Footer-->
 
@@ -132,6 +132,6 @@
     <!-- Theme JS -->
     <!-- Vendor JS -->
 
-    @include('layouts.script')
+    @include('layout.script')
      
 @endsection

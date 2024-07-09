@@ -1,9 +1,9 @@
-@extends('layouts.app')
+@extends('layout.app')
 
 @section('content')
     <!-- Navbar -->
     <!-- Navbar -->
-    @include('layouts.navbar')
+    @include('layout.navbar')
 
     <!-- / Navbar--> <!-- / Navbar-->
 
@@ -72,7 +72,7 @@
             </div>
             <!-- /Cart Items -->
 
-          @include('components.cart.item')
+          @include('compo.cart.item')
 
             <!-- Cart Summary -->
 
@@ -86,7 +86,7 @@
 
     <!-- Footer -->
     <!-- Footer-->
-    @include('layouts.footer')
+    @include('layout.footer')
 
     <!-- / Footer-->
     <!-- Offcanvas Imports-->
@@ -546,10 +546,10 @@
     </div>
     <!-- Search Overlay-->
 
-    @include('components.search')
+    @include('compo.search')
 
     <!-- Theme JS -->
     <!-- Vendor JS -->
 
-    @include('layouts.script')
+    @include('layout.script')
 @endsection

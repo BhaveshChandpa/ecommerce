@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Helpers;
 
 use App\Models\Product;
@@ -16,7 +17,6 @@ class UiHelper
 
     }
 }
-
 
 // "files": [
 //     "/App/Helpers/UiHelper.php"
