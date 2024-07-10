@@ -3,10 +3,11 @@
 namespace App\Notifications;
 
 use Illuminate\Bus\Queueable;
+use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Notifications\Notification;
 
-class SuccessLogin extends Notification
+class SuccessLogin extends Notification implements ShouldQueue
 {
     use Queueable;
 
@@ -28,7 +29,7 @@ class SuccessLogin extends Notification
      */
     public function via(object $notifiable): array
     {
-        return ['database'];
+        return ['mail'];
     }
 
     /**
@@ -47,11 +48,10 @@ class SuccessLogin extends Notification
      *
      * @return array<string, mixed>
      */
-    public function toArray(object $notifiable): array
+    public function toDatabase(object $notifiable): array
     {
         return [
-            //
-            'data' => 'user Login successfully And User is '.$this->user.'.',
+            'user Login successfully And User is '.$this->user.'.',
         ];
     }
 }
