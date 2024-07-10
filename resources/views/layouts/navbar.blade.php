@@ -118,7 +118,7 @@
                     <!-- /Navbar Login-->
     
                     <!-- Navbar Cart-->
-                    @include('components.cart')
+                    @include('compo.cart')
                     <!-- /Navbar Cart-->
     
                 </ul>

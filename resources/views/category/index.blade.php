@@ -1,9 +1,9 @@
-@extends('layouts.app')
+@extends('layout.app')
 
 @section('content')
     <!-- Navbar -->
     <!-- Navbar -->
-    @include('layouts.navbar')
+    @include('layout.navbar')
 
     <!-- / Navbar--> <!-- / Navbar-->
 
@@ -12,7 +12,7 @@
 
         <!-- Category Top Banner -->
 
-        @include('components.category.category-top-banner')
+        @include('compo.category.category-top-banner')
         <!-- Category Top Banner -->
 
         <div class="container">
@@ -21,7 +21,7 @@
 
                 <!-- Category Aside/Sidebar -->
 
-                @include('components.category.category-sidebar')
+                @include('compo.category.category-sidebar')
 
                 <!-- / Category Aside/Sidebar -->
 
@@ -175,7 +175,7 @@
 
                     <!-- Related Categories-->
 
-                    @include('components.category.category-related')
+                    @include('compo.category.category-related')
 
                     <!-- Related Categories-->
 
@@ -190,7 +190,7 @@
 
     <!-- Footer -->
     <!-- Footer-->
-    @include('layouts.footer')
+    @include('layout.footer')
 
     <!-- / Footer-->
     <!-- Offcanvas Imports-->
@@ -576,10 +576,10 @@
     </div>
     <!-- Search Overlay-->
 
-    @include('components.search')
+    @include('compo.search')
 
     <!-- Theme JS -->
     <!-- Vendor JS -->
 
-    @include('layouts.script')
+    @include('layout.script')
 @endsection

@@ -46,26 +46,21 @@ class ProductController extends Controller
         // })
         // ->with('variants', 'category')->firstOrFail();
 
-
-        $product = Product::where('slug', $slug)->whereRelation("variants", 'name', $variant)
-                    ->with(['variants', 'category'])->firstOrFail();
+        $product = Product::where('slug', $slug)->whereRelation('variants', 'name', $variant)
+            ->with(['variants', 'category'])->firstOrFail();
         // dd($product);
         // $products = Product::with(['variants', 'category'])->get();
 
-        // $categoryName = $product->category->name;   
-
+        // $categoryName = $product->category->name;
 
         return view('product.show', [
             // 'products' => $products,
             'product' => $product,
             // 'categoryName' => $categoryName,
-            'variant' => $variant
+            'variant' => $variant,
         ]);
 
     }
-
-
-
 
     /**
      * Show the form for editing the specified resource.
