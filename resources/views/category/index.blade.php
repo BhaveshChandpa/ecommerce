@@ -63,7 +63,8 @@
                                 </ul>
                             </div>
                         </div>
-                    </div> <!-- / Top Toolbar-->
+                    </div>
+                     <!-- / Top Toolbar-->
 
                     <!-- Products-->
                     <div class="row g-4 mb-5">
@@ -194,7 +195,7 @@
     <!-- / Footer-->
     <!-- Offcanvas Imports-->
     <!-- Cart Offcanvas-->
-  
+
         @include('components.category.category-cart')
 
     <!-- Filters Offcanvas-->
