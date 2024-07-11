@@ -14,6 +14,8 @@ class HomeController extends Controller
     public function home(Request $request)
     {
 
+
+
         // $cachekey = 'categories.all';
         // $cacheDuration = 0;
 
@@ -30,6 +32,7 @@ class HomeController extends Controller
 
         return view('home.index', ['products' => $products]);
         // dd($request->all());
+
 
     }
 }

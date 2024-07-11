@@ -45,8 +45,13 @@ Route::get('/category', [CategoryController::class, 'index'])->name('category.in
 
 Route::get('product/{slug?}/{variant}', [ProductController::class, 'show'])->name('product.show')->where('size', '[A-Za-z]+');
 
-Route::get('product/cart', [CartController::class, 'addToCart'])->name('cart.add');
+// Route::get('product/cart', [CartController::class, 'addToCart'])->name('cart.add');
 // Product Routes
 Route::resource('product', ProductController::class)->parameters(
     ['product' => 'product:slug']
 )->only(['index']);
+
+
+route::get('/product/cart', [CartController::class, 'index'])->name('cart.index');
+route::post('/product/add/', [CartController::class, 'add'])->name('cart.add');
+// route::get('product/cart', [CartController::class, 'index'])->name('cart.index');
