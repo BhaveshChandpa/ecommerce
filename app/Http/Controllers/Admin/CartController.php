@@ -3,41 +3,78 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Models\Product;
+use App\Http\Requests\CartStoreRequest;
 use Illuminate\Http\Request;
+use App\Models\Product;
 use App\Models\Cart;
+use App\Models\Variant;
 use Illuminate\Support\Facades\Auth;
-
 
 class CartController extends Controller
 {
-    public function index(Request $request)
+    /**
+     * Display a listing of the resource.
+     */
+    public function index()
     {
-
-
-
-
-        return view('cart.cart');
+        //
     }
 
+    /**
+     * Show the form for creating a new resource.
+     */
+    public function create()
+    {
+        //
+    }
 
-    public function add(Request $request){
+    /**
+     * Store a newly created resource in storage.
+     */
+    public function store(CartStoreRequest $request)
+    {
+            $requestData = $request->validated();
+                           
+            if($cart = auth()->user()->cart){
+                $cart->increment('quantity', 1);
+            } else{
+                Cart::create([
+                    'variant_id' => Variant::where('name',$requestData['variant'])->value('id'),
+                    'product_id' => $requestData['product_id']
+                ]);
+    
+            }
+    }
 
+    /**
+     * Display the specified resource.
+     */
+    public function show(string $id)
+    {
+        //
+    }
 
-        $product = Product::findOrFail($request->product_id);
+    /**
+     * Show the form for editing the specified resource.
+     */
+    public function edit(string $id)
+    {
+        //
+    }
 
-        $cart = Cart::updateOrCreate(
-            [
-                'user_id' => Auth::id(),
-                'product_id' => $product->id,
-            ],
-            [
-                'quantity' => $request->quantity,
-            ]
-        );
+    /**
+     * Update the specified resource in storage.
+     */
+    public function update(Request $request, string $id)
+    {
+        //
+    }
 
-        return view('cart.cart');
-
-
+    /**
+     * Remove the specified resource from storage.
+     */
+    public function destroy(string $id)
+    {
+        //
     }
 }

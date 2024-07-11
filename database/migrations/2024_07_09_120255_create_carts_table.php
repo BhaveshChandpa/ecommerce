@@ -5,6 +5,7 @@ use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 use App\Models\User;
 use App\Models\Product;
+use App\Models\Variant;
 
 return new class extends Migration
 {
@@ -15,9 +16,10 @@ return new class extends Migration
     {
         Schema::create('carts', function (Blueprint $table) {
             $table->id();
-            $table->foreignId(User::class);
-            $table->foreignId(Product::class);
-            $table->string('qauntity');
+            $table->foreignId('user_id')->constrained();
+            $table->foreignId('product_id')->constrained();
+            $table->foreignId('variant_id')->constrained();
+            $table->string('quantity');
             $table->timestamps();
         });
     }
