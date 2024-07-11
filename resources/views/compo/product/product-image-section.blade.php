@@ -21,7 +21,7 @@
                                 alt="Bootstrap 5 Template by Pixel Rocket" data-zoomable>
                         </picture>
                     </div>
-                    <div class="swiper-slide bg-white h-auto">
+                    {{-- <div class="swiper-slide bg-white h-auto">
                         <picture>
                             <img class="img-fluid d-table mx-auto" src="./assets/images/products/product-5b.jpg"
                                 alt="Bootstrap 5 Template by Pixel Rocket" data-zoomable>
@@ -32,7 +32,7 @@
                             <img class="img-fluid d-table mx-auto" src="./assets/images/products/product-5c.jpg"
                                 alt="Bootstrap 5 Template by Pixel Rocket" data-zoomable>
                         </picture>
-                    </div>
+                    </div> --}}
                 </div>
             </div>
         </div>
