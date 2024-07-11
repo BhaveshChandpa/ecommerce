@@ -2,7 +2,7 @@
 @php
 
     use Illuminate\Http\Request;
-    
+
 
 
     $slug = (request()->route()->parameters['slug']);
@@ -30,8 +30,8 @@
               <span class="small text-uppercase tracking-wide fw-bolder text-center d-block">Quick Add</span>
               <div class="d-flex justify-content-center align-items-center flex-wrap mt-3">
                     @foreach ($product->variants as $variant)
-                    
-                <a href="{{ route('product.show', ['product' => $product->slug, 'variant' => $variant->name] )}}">
+
+                <a href="{{ route('product.show', ['slug' => $product->slug, 'variant' => $variant->name] )}}">
 
                     <button type="button"  class="btn btn-outline-dark btn-sm mx-2">{{ $variant->name }}</button>
                 </a>
