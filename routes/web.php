@@ -52,6 +52,8 @@ Route::resource('product', ProductController::class)->parameters(
 )->only(['index']);
 
 
-route::get('/product/cart', [CartController::class, 'index'])->name('cart.index');
-route::post('/product/add/', [CartController::class, 'add'])->name('cart.add');
+// route::get('/product/cart', [CartController::class, 'index'])->name('cart.index');
+// route::post('/product/add/{slug}/{variant}', [CartController::class, 'add'])->name('cart.add');
 // route::get('product/cart', [CartController::class, 'index'])->name('cart.index');
+
+Route::resource('carts', CartController::class);
