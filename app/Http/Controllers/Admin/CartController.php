@@ -10,6 +10,7 @@ use App\Models\Cart;
 use App\Models\Variant;
 use Illuminate\Support\Facades\Auth;
 
+
 class CartController extends Controller
 {
     /**
@@ -31,18 +32,31 @@ class CartController extends Controller
     /**
      * Store a newly created resource in storage.
      */
+
     public function store(CartStoreRequest $request)
     {
             $requestData = $request->validated();
-                           
-            if($cart = auth()->user()->cart){
+
+            // if($cart = auth()->user()->cart){
+            //     $cart->increment('quantity', 1);
+
+            // dd($requestData);
+            $variantId = Variant::where('name', $requestData['variant'])->value('id');
+
+            $cart = Cart::where('variant_id', $variantId)
+                ->where('product_id', $requestData['product_id'])
+                ->first();
+
+            if($cart){
+
                 $cart->increment('quantity', 1);
-            } else{
+
+            }else{
                 Cart::create([
                     'variant_id' => Variant::where('name',$requestData['variant'])->value('id'),
                     'product_id' => $requestData['product_id']
                 ]);
-    
+
             }
     }
 
