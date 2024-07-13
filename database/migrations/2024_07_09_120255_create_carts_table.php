@@ -19,7 +19,7 @@ return new class extends Migration
             $table->foreignId('user_id')->constrained();
             $table->foreignId('product_id')->constrained();
             $table->foreignId('variant_id')->constrained();
-            $table->string('quantity');
+            $table->string('quantity')->default(1);
             $table->timestamps();
         });
     }
