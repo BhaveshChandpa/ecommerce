@@ -6,7 +6,7 @@ use App\Models\Category;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
-
+use App\Models\Cart;
 class AppServiceProvider extends ServiceProvider
 {
     /**
@@ -28,6 +28,8 @@ class AppServiceProvider extends ServiceProvider
                 ->select('id', 'parent_id', 'name')
                 ->get();
             $view->with('categories', $categories);
+
+
 
         });
 
