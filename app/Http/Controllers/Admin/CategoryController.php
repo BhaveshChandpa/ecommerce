@@ -13,12 +13,13 @@ class CategoryController extends Controller
     public function index()
     {
 
-        $categories = Category::all();
+        // $categories = Category::all();
         $category = Category::with('category', 'subcategories')->first();
+        $products = Product::with('variants')->get();
 
         // $product = Product::all();
         // $product = Product::with('variants')->get();
 
-        return view('category.index', ['category' => $category,  'categories' => $categories]);
+        return view('category.index', ['category' => $category, 'products' => $products]);
     }
 }
