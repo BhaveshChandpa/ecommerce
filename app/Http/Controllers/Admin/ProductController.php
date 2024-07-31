@@ -6,15 +6,22 @@ use App\Http\Controllers\Controller;
 use App\Models\Category;
 use App\Models\Product;
 use Illuminate\Http\Request;
+use App\Repositories\ProductRepositoryInterface;
 
 class ProductController extends Controller
 {
-    /**
+    protected $productRepository;
+
+    public function __construct(ProductRepositoryInterface $productRepository){
+
+        $this->productRepository = $productRepository;
+    }
+        /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $products = Product::all();
+        $products = $this->productRepository->all();
 
         return view('product.index', ['products' => $products]);
     }
