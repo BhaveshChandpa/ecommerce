@@ -160,9 +160,14 @@ return [
          * Package Service Providers...
          */
 
+
+
         /*
          * Application Service Providers...
+         *
+         *
          */
+        App\Providers\RepositoryServiceProvider::class,
         App\Providers\ObserverServiceProvider::class,
         App\Providers\AppServiceProvider::class,
         App\Providers\AuthServiceProvider::class,
