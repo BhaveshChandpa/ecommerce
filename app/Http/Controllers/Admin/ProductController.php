@@ -60,6 +60,7 @@ class ProductController extends Controller
 
         // $categoryName = $product->category->name;
 
+        dd($product);
         return view('product.show', [
             // 'products' => $products,
             'product' => $product,

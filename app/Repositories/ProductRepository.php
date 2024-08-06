@@ -2,61 +2,44 @@
 
 namespace App\Repositories;
 
+use App\Http\Resources\ProductResource;
 use App\Models\Product;
+use Illuminate\Http\Resources\Json\JsonResource;
+use Illuminate\Database\Eloquent\Model;
 
-class ProductRepository implements ProductRepositoryInterface
-{
-    protected $model;
+class ProductRepository implements ProductRepositoryInterface{
 
-    public function __construct(Product $product){
 
-        $this->model = $product;
-    }
-
-    public function all(){
-
-        return $this->model->all();
+    public function all():JsonResource
+    {
+        return ProductResource::collection(Product::all());
     }
 
 
-    public function find($product){
-
-        return $this->model->find($product);
+    public function find(Product $product):JsonResource
+    {
+        return new ProductResource($product);
     }
 
 
-    public function create(array $data){
-
-        return $this->model->create($data);
+    public function create(array $data):Model
+    {
+        return Product::create($data);
     }
 
 
-    public function update($product, array $data){
+    public function update(Product $product, array $data){
 
-        $products = $this->model->find($product);
-
-        if($products){
-
-            $products->update($data);
-
-            return $products;
-
-        }
-
-        return null;
-
+        abort_if(!$product,'Product Not found');
+        return $product->update($data);
     }
 
 
-    public function delete($product){
+    public function delete(Product $product){
 
-        $products = $this->model->find($product);
-
-        if($products){
-            return $this->model->delete();
-        }
-
-        return false;
+        abort_if(!$product,'Product Not found');
+        
+        return $product->delete();
     }
 
 
