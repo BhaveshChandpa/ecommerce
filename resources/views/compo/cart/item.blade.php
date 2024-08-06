@@ -5,7 +5,7 @@
         <div class="py-3 border-bottom-white-opacity">
             <div class="d-flex justify-content-between align-items-center mb-2 flex-column flex-sm-row">
                 <p class="m-0 fw-bolder fs-6">Subtotal</p>
-                <p class="m-0 fs-6 fw-bolder">$422.99</p>
+                <p class="m-0 fs-6 fw-bolder">${{ $item->quantity * $item->product->price }}</p>
             </div>
             <div class="d-flex justify-content-between align-items-center flex-column flex-sm-row mt-3 m-sm-0">
                 <p class="m-0 fw-bolder fs-6">Shipping</p>

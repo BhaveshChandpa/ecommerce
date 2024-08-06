@@ -18,7 +18,10 @@ class CartController extends Controller
      */
     public function index()
     {
-        //
+
+        $cartItem = Cart::with(['user', 'product', 'variant'])->where('user_id', auth()->user()->id)->get();
+        
+        return view('cart.index', ['cartItem' => $cartItem]);
     }
 
     /**
@@ -55,6 +58,7 @@ class CartController extends Controller
                 Cart::create([
                     'variant_id' => Variant::where('name',$requestData['variant'])->value('id'),
                     'product_id' => $requestData['product_id']
+
                 ]);
 
             }

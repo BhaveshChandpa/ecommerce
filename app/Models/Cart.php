@@ -11,9 +11,9 @@ class Cart extends Model
 
     protected static function booted()
     {
-        static::addGlobalScope('delete', function (Builder $builder) {
-            $builder->where('user_id', auth()->id());
-        });
+        // static::addGlobalScope('delete', function (Builder $builder) {
+        //     $builder->where('user_id', auth()->id());
+        // });
     }
 
     use HasFactory;
@@ -24,6 +24,26 @@ class Cart extends Model
         'quantity',
         'variant_id'
     ];
+
+
+
+    public function user(){
+
+        return $this->belongsTo(User::class);
+    }
+
+
+    public function product(){
+
+        return $this->belongsTo(Product::class);
+    }
+
+
+
+    public function variant(){
+
+        return $this->belongsTo(Variant::class);
+    }
 
 
 

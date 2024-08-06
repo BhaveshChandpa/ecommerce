@@ -17,6 +17,9 @@
             <!-- Cart Items -->
             <div class="col-12 col-lg-6 col-xl-7">
                 <div class="table-responsive">
+
+                    @foreach ($cartItem as $item)
+                        
                     <table class="table">
                         <thead>
                             <tr>
@@ -31,7 +34,7 @@
                                 <!-- image -->
                                 <td class="d-none d-sm-table-cell">
                                     <picture class="d-block bg-light p-3 f-w-20">
-                                        <img class="img-fluid" src="./assets/images/products/product-1.jpg" alt="">
+                                        <img class="img-fluid" src={{ $item->product->image }} alt="">
                                     </picture>
                                 </td>
                                 <!-- image -->
@@ -40,9 +43,9 @@
                                 <td>
                                     <div class="ps-sm-3">
                                         <h6 class="mb-2 fw-bolder">
-                                            Mens StormBreaker Jacket
+                                           {{$item->product->category->name}}
                                         </h6>
-                                        <small class="d-block text-muted">Mens / Blue / Medium</small>
+                                        <small class="d-block text-muted">Mens / {{$item->variant->name}} / Blue    </small>
                                     </div>
                                 </td>
                                 <!-- Details -->
@@ -50,7 +53,7 @@
                                 <!-- Qty -->
                                 <td>
                                     <div class="px-3">
-                                        <span class="small text-muted mt-1">1 @ $1129.99</span>
+                                        <span class="small text-muted mt-1">{{ $item->quantity }} @ {{ $item->quantity * $item->product->price }}</span>
                                     </div>
                                 </td>
                                 <!-- /Qty -->
@@ -59,7 +62,7 @@
                                 <td class="f-h-0">
                                     <div class="d-flex justify-content-between flex-column align-items-end h-100">
                                         <i class="ri-close-circle-line ri-lg"></i>
-                                        <p class="fw-bolder mt-3 m-sm-0">$1129.99</p>
+                                        <p class="fw-bolder mt-3 m-sm-0">$ {{ $item->product->price }}</p>
                                     </div>
                                 </td>
                                 <!-- /Actions -->
@@ -68,6 +71,8 @@
                            
                         </tbody>
                     </table>
+                    @endforeach
+
                 </div>
             </div>
             <!-- /Cart Items -->
@@ -111,7 +116,7 @@
                     </div>
 
                     <!-- Cart Product-->
-                    <div class="row mx-0 pb-4 mb-4 border-bottom">
+                    {{-- <div class="row mx-0 pb-4 mb-4 border-bottom">
                         <div class="col-3">
                             <picture class="d-block bg-light">
                                 <img class="img-fluid" src="{{ asset('assets/src/assets/images/products/product-1.jpg') }}"
@@ -121,7 +126,7 @@
                         <div class="col-9">
                             <div>
                                 <h6 class="justify-content-between d-flex align-items-start mb-2">
-                                    Mens StormBreaker Jacket
+                                   XYZ  
                                     <i class="ri-close-line"></i>
                                 </h6>
                                 <small class="d-block text-muted fw-bolder">Size: Medium</small>
@@ -129,11 +134,11 @@
                             </div>
                             <p class="fw-bolder text-end m-0">$85.00</p>
                         </div>
-                    </div>
+                    </div> --}}
 
                     <!-- Cart Product-->
 
-                    <div class="row mx-0 pb-4 mb-4 border-bottom">
+                    {{-- <div class="row mx-0 pb-4 mb-4 border-bottom">
                         <div class="col-3">
                             <picture class="d-block bg-light">
                                 <img class="img-fluid"
@@ -152,7 +157,7 @@
                             </div>
                             <p class="fw-bolder text-end m-0">$99.00</p>
                         </div>
-                    </div>
+                    </div> --}}
 
                 </div>
                 <div class="border-top pt-3">

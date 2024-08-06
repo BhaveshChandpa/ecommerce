@@ -1,3 +1,5 @@
+
+
 @extends('layout.app')
 
 @section('content')
@@ -68,7 +70,7 @@
 
                     <!-- Products-->
                     <div class="row g-4 mb-5">
-                         @foreach ($products as $product)
+                        @foreach ($product as $product)
                             <div class="col-12 col-sm-6 col-md-4">
                                 {{-- subcategoryies loop --}}
 
@@ -91,11 +93,16 @@
                                             <div class="d-flex justify-content-center align-items-center flex-wrap mt-3">
 
                                                 @foreach ($product->variants as $variant)
-                                                    <button
-                                                        class="btn btn-outline-dark btn-sm mx-2">{{ $variant->name }}</button>
+                                                    {{-- <button
+                                                        class="btn btn-outline-dark btn-sm mx-2">{{ $variant->name }}
+                                                    </button> --}}
+                                                
+
+                                                <a href="{{ route('product.show', ['slug' => $product->slug, 'variant' => $variant->name]) }}">
+                                                    <button type="button" class="btn btn-outline-dark btn-sm mx-2">{{ $variant->name }}</button>
+                                                </a>
+
                                                 @endforeach
-
-
                                             </div>
                                         </div>
                                     </div>
