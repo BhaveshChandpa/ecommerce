@@ -1,3 +1,5 @@
+
+
 @extends('layout.app')
 
 @section('content')
@@ -68,7 +70,7 @@
 
                     <!-- Products-->
                     <div class="row g-4 mb-5">
-                        @foreach ($product as $product)
+                        @foreach ($products as $product)
                             <div class="col-12 col-sm-6 col-md-4">
                                 {{-- subcategoryies loop --}}
 
@@ -91,11 +93,16 @@
                                             <div class="d-flex justify-content-center align-items-center flex-wrap mt-3">
 
                                                 @foreach ($product->variants as $variant)
-                                                    <button
-                                                        class="btn btn-outline-dark btn-sm mx-2">{{ $variant->name }}</button>
+                                                    {{-- <button
+                                                        class="btn btn-outline-dark btn-sm mx-2">{{ $variant->name }}
+                                                    </button> --}}
+                                                
+
+                                                <a href="{{ route('product.show', ['slug' => $product->slug, 'variant' => $variant->name]) }}">
+                                                    <button type="button" class="btn btn-outline-dark btn-sm mx-2">{{ $variant->name }}</button>
+                                                </a>
+
                                                 @endforeach
-
-
                                             </div>
                                         </div>
                                     </div>
@@ -196,7 +203,7 @@
     <!-- Offcanvas Imports-->
     <!-- Cart Offcanvas-->
 
-        @include('components.category.category-cart')
+        @include('compo.category.category-cart')
 
     <!-- Filters Offcanvas-->
     <div class="offcanvas offcanvas-end d-none" tabindex="-1" id="offcanvasFilters">
@@ -208,7 +215,7 @@
             <div class="d-flex flex-column justify-content-between w-100 h-100">
 
                 <!-- Filters-->
-                <div>
+                {{-- <div>
                     <!-- Filter Category -->
                     <div class="mb-4">
                         <h2 class="mb-4 fs-6 mt-2 fw-bolder">Jacket Category</h2>
@@ -532,7 +539,7 @@
                         </div>
                     </div>
                     <!-- / Colour Filter -->
-                </div>
+                </div> --}}
                 <!-- / Filters-->
 
                 <!-- Filter Button-->

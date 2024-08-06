@@ -11,8 +11,7 @@
         @include('compo.banner')
         <!--/ Hero Section-->
 
-        <!-- Featured Brands-->
-        <div class="mb-lg-7 bg-light py-4" data-aos="fade-in">
+        <!-- Featured Brands-->        <div class="mb-lg-7 bg-light py-4" data-aos="fade-in">
             <div class="container">
                 <div class="row gx-3 align-items-center">
                     <div
@@ -179,10 +178,7 @@
 
                         </div>
 
-                        {{-- <a class="mx-md-4 fs-p link-cover text-decoration-none d-block mx-2 mb-0 text-center"
-                            href="{{ route('product.show', $product->slug) }}">{{ $product->name }}</a>
-                        <p class="fw-bolder m-0 mt-2">${{ $product->price }}</p> --}}
-
+                   
                     </div>
                 </div>
 
